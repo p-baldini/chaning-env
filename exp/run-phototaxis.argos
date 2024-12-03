@@ -7,7 +7,7 @@
   <!-- ************************* -->
   <framework>
     <system threads="0" />
-    <experiment length="14400"
+    <experiment length="20000"
                 ticks_per_second="10"
                 random_seed="1"/>
   </framework>
@@ -22,8 +22,8 @@
       </actuators>
       <sensors>
         <footbot_light implementation="rot_z_only" show_rays="true" noise_level="0.01" />
-				<differential_steering implementation="default" noise_level="0.0"/>
-				<positioning implementation="default" noise_level="0.0" />
+        <differential_steering implementation="default" noise_level="0.0"/>
+        <positioning implementation="default" noise_level="0.0" />
       </sensors>
       <params script="phototaxis_instance.lua" />
     </lua_controller>
@@ -47,7 +47,7 @@
       <body position="0,300,0" orientation="0,0,0" />
     </box>
 
-		<light id="light"
+    <light id="light"
            position="0,0,0.5"
            orientation="0,0,0"
            color="yellow"
@@ -74,7 +74,7 @@
     <led id="leds" />
   </media>
 
-	
+  
   <!-- ****************** -->
   <!-- * Visualization * -->
   <!-- ****************** -->
