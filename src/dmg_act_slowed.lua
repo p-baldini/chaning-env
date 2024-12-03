@@ -5,7 +5,7 @@ local broken = { false, false }
 
 -- Set the damage to the sensor and actuators. Select at random an actuator to
 -- damage, setting its speed to half the ordinary one.
-function damage.set_damage() -- TODO add ignored value
+function damage.set_damage(_)
     index = math.random(0, 1) + 1
     broken[index] = true
 end
