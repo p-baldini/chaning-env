@@ -26,8 +26,8 @@ best_I = {}
 state = {}
 
 steps_count = 0
-EPOCH_STEPS = 250
-SAFE_STEPS = 100000
+EPOCH_STEPS = 1000
+SAFE_STEPS = 400000
 
 in_mapping = {}
 out_mapping = {}
