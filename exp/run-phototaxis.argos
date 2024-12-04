@@ -11,7 +11,7 @@
                 ticks_per_second="10"
                 random_seed="1"/>
   </framework>
- 
+
   <!-- *************** -->
   <!-- * Controllers * -->
   <!-- *************** -->
@@ -28,7 +28,7 @@
       <params script="phototaxis_instance.lua" />
     </lua_controller>
   </controllers>
- 
+
 
   <!-- *********************** -->
   <!-- * Arena configuration * -->
