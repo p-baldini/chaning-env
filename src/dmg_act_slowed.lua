@@ -5,9 +5,11 @@ local broken = { false, false }
 
 -- Set the damage to the sensor and actuators. Select at random an actuator to
 -- damage, setting its speed to half the ordinary one.
-function damage.set_damage(_)
-    index = math.random(0, 1) + 1
-    broken[index] = true
+function damage.set_damage(number_of_faults)
+    if number_of_faults > 0 then
+        index = math.random(0, 1) + 1
+        broken[index] = true
+    end
 end
 
 -- Cycle the sensory inputs and force their values in the BN state.
