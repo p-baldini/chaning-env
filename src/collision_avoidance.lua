@@ -17,7 +17,7 @@ BN_INPUT_NODES_COUNT = 24
 BN_OUTPUT_NODES_COUNT = 2
 
 -- Threshold to convert from real to binary values 
-LIGHT_THRESHOLD = 0.2
+PROXIMITY_THRESHOLD = 0.2
 
 F = {}
 I = {}
@@ -26,8 +26,8 @@ best_I = {}
 state = {}
 
 steps_count = 0
-EPOCH_STEPS = 600
-SAFE_STEPS = 72000
+EPOCH_STEPS = 250
+SAFE_STEPS = 100000
 
 in_mapping = {}
 out_mapping = {}
@@ -36,6 +36,16 @@ best_out_mapping = {}
 
 performance = 0
 best_performance = 0
+
+
+
+-- Round to 1 values greater or similar to 1.
+function sigma(x)
+    if x > 0.9 then
+        x = 1
+    end
+    return x
+end
 
 
 
@@ -52,10 +62,10 @@ function eval_function(robot)
 
     bvl = 0
     bvr = 0
-    if vl > 0 then
+    if robot.wheels.velocity_left > 0 then
         bvl = 1
     end
-    if vr > 0 then
+    if robot.wheels.velocity_right > 0 then
         bvr = 1
     end
 
@@ -205,11 +215,11 @@ function step()
     outputs = {}
     inputs = {}
     for i = 1, 24 do
-        inputs[i] = robot.light[i].value
+        inputs[i] = robot.proximity[i].value
     end
 
     -- Perturb the network by overriding some nodes with the sensory inputs
-    damage.perturb_network(inputs, in_mapping, state, LIGHT_THRESHOLD)
+    damage.perturb_network(inputs, in_mapping, state, PROXIMITY_THRESHOLD)
 
     -- Update BN state: make an update step
     state = bn.update_3RBN(state, F, I)
