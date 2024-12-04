@@ -13,18 +13,36 @@ mkdir $OUTPUT_PATH
 
 for SEED in `seq $START_SEED $END_SEED`
 do
-    for N_FAULTS in `seq 0 3 24`
-    do
-        # create an instance of the controller for the specific experiment
-        cp phototaxis.lua phototaxis_instance.lua
+    if [ $DAMAGE_MODULE = "dmg_act_slowed" ]
+    then
+        for N_FAULTS in 0 1
+        do
+            # create an instance of the controller for the specific experiment
+            cp phototaxis.lua phototaxis_instance.lua
 
-        # set up the controller with the experiment parameters
-        sed -i "s|££ DAMAGE_MODULE ££|\"$DAMAGE_MODULE\"|" "phototaxis_instance.lua"
-        sed -i "s|££ SEED ££|$SEED|" "phototaxis_instance.lua"
-        sed -i "s|££ BIAS ££|$BIAS|" "phototaxis_instance.lua"
-        sed -i "s|££ NUMBER_OF_FAULTS ££|$N_FAULTS|" "phototaxis_instance.lua"
+            # set up the controller with the experiment parameters
+            sed -i "s|££ DAMAGE_MODULE ££|\"$DAMAGE_MODULE\"|" "phototaxis_instance.lua"
+            sed -i "s|££ SEED ££|$SEED|" "phototaxis_instance.lua"
+            sed -i "s|££ BIAS ££|$BIAS|" "phototaxis_instance.lua"
+            sed -i "s|££ NUMBER_OF_FAULTS ££|$N_FAULTS|" "phototaxis_instance.lua"
 
-        # launch the argos3 experiment and save the results to a file
-        argos3 -c run-phototaxis.argos | grep -v INFO > "$OUTPUT_PATH/$DAMAGE_MODULE-$BIAS-$N_FAULTS-$SEED.txt"
-    done
+            # launch the argos3 experiment and save the results to a file
+            argos3 -c run-phototaxis.argos | grep -v INFO > "$OUTPUT_PATH/$DAMAGE_MODULE-$BIAS-$N_FAULTS-$SEED.txt"
+        done
+    else
+        for N_FAULTS in `seq 0 3 24`
+        do
+            # create an instance of the controller for the specific experiment
+            cp phototaxis.lua phototaxis_instance.lua
+
+            # set up the controller with the experiment parameters
+            sed -i "s|££ DAMAGE_MODULE ££|\"$DAMAGE_MODULE\"|" "phototaxis_instance.lua"
+            sed -i "s|££ SEED ££|$SEED|" "phototaxis_instance.lua"
+            sed -i "s|££ BIAS ££|$BIAS|" "phototaxis_instance.lua"
+            sed -i "s|££ NUMBER_OF_FAULTS ££|$N_FAULTS|" "phototaxis_instance.lua"
+
+            # launch the argos3 experiment and save the results to a file
+            argos3 -c run-phototaxis.argos | grep -v INFO > "$OUTPUT_PATH/$DAMAGE_MODULE-$BIAS-$N_FAULTS-$SEED.txt"
+        done
+    fi
 done
