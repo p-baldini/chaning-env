@@ -17,6 +17,10 @@ do
     then
         for N_FAULTS in 0 1
         do
+            if [ -f "$OUTPUT_PATH/$DAMAGE_MODULE-$BIAS-$N_FAULTS-$SEED.txt" ]
+            then
+                continue
+            fi
             # create an instance of the controller for the specific experiment
             cp collision_avoidance.lua collision_avoidance_instance.lua
 
@@ -32,6 +36,10 @@ do
     else
         for N_FAULTS in `seq 0 3 24`
         do
+            if [ -f "$OUTPUT_PATH/$DAMAGE_MODULE-$BIAS-$N_FAULTS-$SEED.txt" ]
+            then
+                continue
+            fi
             # create an instance of the controller for the specific experiment
             cp collision_avoidance.lua collision_avoidance_instance.lua
 
