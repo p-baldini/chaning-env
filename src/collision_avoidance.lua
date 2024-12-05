@@ -120,7 +120,8 @@ function init()
 
     F, I = bn.create_3RBN_bias_nosl(BN_NODES_COUNT, BN_BIAS)
 
-    -- Overimpose functions with BIAS 0.5 on output nodes
+    -- Overimpose functions with BIAS 0.5 on output nodes to mitigate biassed
+    -- behaviors
     for j = 1, 8 do
         F[BN_NODES_COUNT][j] = math.random(0,1)
         F[BN_NODES_COUNT-1][j] = math.random(0,1)
