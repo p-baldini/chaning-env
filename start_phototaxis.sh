@@ -9,7 +9,7 @@ OUTPUT_PATH="/home/persistent/2024_12_02-output-phototaxis"
 [ -z "$END_SEED" ] && exit 4
 
 # create an output directory for the experiment results
-mkdir $OUTPUT_PATH
+mkdir -p $OUTPUT_PATH
 
 for SEED in `seq $START_SEED $END_SEED`
 do
