@@ -1,6 +1,6 @@
 #!/bin/sh
 
-OUTPUT_PATH="/home/persistent/2024_12_02-output-phototaxis"
+OUTPUT_PATH="/home/persistent/2025-01-20_experiment/phototaxis"
 
 # check that the variables of the experiment are set to a non empty value
 [ -z "$BIAS" ] && exit 1
@@ -15,7 +15,7 @@ for SEED in `seq $START_SEED $END_SEED`
 do
     if [ $DAMAGE_MODULE = "dmg_act_slowed" ]
     then
-        for N_FAULTS in 0 1
+        for N_FAULTS in 0 1 2
         do
             if [ -f "$OUTPUT_PATH/$DAMAGE_MODULE-$BIAS-$N_FAULTS-$SEED.txt" ]
             then
