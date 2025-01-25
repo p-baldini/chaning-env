@@ -165,7 +165,7 @@ function step()
 
     -- At half experiment enable the damages of the robot
     if steps_count == SAFE_STEPS then
-        print('Damage!')
+        print('Damage! x: ' .. robot.positioning.position.x .. ' y ' .. robot.positioning.position.y)
         bn.print_vector(best_in_mapping)
         damage.set_damage(FAULTS_COUNT)
     end
@@ -183,9 +183,15 @@ function step()
     -- End of epoch: check if current evaluation is equal to or better than
     -- previous one
     if math.fmod(steps_count, EPOCH_STEPS) == 0 then
-        -- If the new coupling performs better than the best, set it as the new
-        -- best
-        if (performance > best_performance) then
+        -- Every odd epoch we starts a re-evaluation of the best configuration;
+        -- Every even epoch we search for better configuration
+        exploratory_epoch = math.fmod(steps_count / EPOCH_STEPS, 2) == 0
+
+        -- If we are starting an exploration, it means we just re-evaluated
+        -- the best configuration: update its performance;
+        -- Alternatively, if we found a better configuration during the 
+        -- exploration, set it as the new best.
+        if exploratory_epoch or performance > best_performance then
             best_in_mapping = bn.table_copy(in_mapping)
             best_out_mapping = bn.table_copy(out_mapping)
             best_performance = performance
@@ -193,11 +199,14 @@ function step()
             -- best_I = bn.table_copy(I)
             log(steps_count .. ' ' .. best_performance)
             bn.print_vector(best_in_mapping)
-        -- If the new mapping performs worse than the best, discard it and
-        -- create a new one by modifying the best
-        else
-            in_mapping = bn.table_copy(best_in_mapping)
-            out_mapping = bn.table_copy(best_out_mapping)
+        end
+
+        -- Set the best coupling as the starting one
+        in_mapping = bn.table_copy(best_in_mapping)
+        out_mapping = bn.table_copy(best_out_mapping)
+
+        -- If we are starting an exploratory epoch, modify the best coupling
+        if exploratory_epoch then
             change_mapping()
         end
 
