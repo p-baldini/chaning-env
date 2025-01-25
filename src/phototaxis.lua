@@ -30,7 +30,7 @@ best_I = {}
 state = {}
 
 steps_count = 0
-EPOCH_STEPS = 250
+EPOCH_STEPS = 100
 SAFE_STEPS = 100000
 
 in_mapping = {}
@@ -160,12 +160,11 @@ function step()
     -- Increment the step counter
     steps_count = steps_count + 1
 
-    -- Update the traveled distance from the position at the start of the epoch
-    performance = performance + eval_function(start_epoch_distance)
-
     -- End of epoch: check if current evaluation is equal to or better than
     -- previous one
     if math.fmod(steps_count, EPOCH_STEPS) == 0 then
+        -- Update the traveled distance from the position at the start of the epoch
+        performance = eval_function(start_epoch_distance)
 
         -- Every odd epoch we starts a re-evaluation of the best configuration;
         -- Every even epoch we search for better configuration
