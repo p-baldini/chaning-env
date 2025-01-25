@@ -1,6 +1,6 @@
 #!/bin/sh
 
-OUTPUT_PATH="/home/persistent/2025-01-25_experiment/collision_avoidance"
+OUTPUT_PATH="/home/persistent/2025-01-26_experiment/collision_avoidance"
 
 # check that the variables of the experiment are set to a non empty value
 [ -z "$BIAS" ] && exit 1
@@ -30,7 +30,7 @@ do
             sed -i "s|££ SEED ££|$SEED|" "collision_avoidance_instance.lua"
             sed -i "s|££ BIAS ££|$BIAS|" "collision_avoidance_instance.lua"
             sed -i "s|££ NUMBER_OF_FAULTS ££|$N_FAULTS|" "collision_avoidance_instance.lua"
-            sed -i "s|random_seed=\"1\"|random_seed=\"$SEED\"" "run-collision-avoidance_instance.argos"
+            sed -i "s|random_seed=\"1\"|random_seed=\"$SEED\"|" "run-collision-avoidance_instance.argos"
 
             # launch the argos3 experiment and save the results to a file
             argos3 -c run-collision-avoidance_instance.argos | grep -v INFO > "$OUTPUT_PATH/$DAMAGE_MODULE-$BIAS-$N_FAULTS-$SEED.txt"
@@ -51,7 +51,7 @@ do
             sed -i "s|££ SEED ££|$SEED|" "collision_avoidance_instance.lua"
             sed -i "s|££ BIAS ££|$BIAS|" "collision_avoidance_instance.lua"
             sed -i "s|££ NUMBER_OF_FAULTS ££|$N_FAULTS|" "collision_avoidance_instance.lua"
-            sed -i "s|random_seed=\"1\"|random_seed=\"$SEED\"" "run-collision-avoidance_instance.argos"
+            sed -i "s|random_seed=\"1\"|random_seed=\"$SEED\"|" "run-collision-avoidance_instance.argos"
 
             # launch the argos3 experiment and save the results to a file
             argos3 -c run-collision-avoidance_instance.argos | grep -v INFO > "$OUTPUT_PATH/$DAMAGE_MODULE-$BIAS-$N_FAULTS-$SEED.txt"
