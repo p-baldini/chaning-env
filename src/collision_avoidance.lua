@@ -26,7 +26,7 @@ best_I = {}
 state = {}
 
 steps_count = 0
-EPOCH_STEPS = 1000
+EPOCH_STEPS = 300
 SAFE_STEPS = 400000
 
 in_mapping = {}
@@ -41,7 +41,7 @@ best_performance = 0
 
 -- Round to 1 values greater or similar to 1.
 function sigma(x)
-    if x > 0.9 then
+    if x > 0.9 then -- TODO no else?
         x = 1
     end
     return x
@@ -52,8 +52,8 @@ end
 -- Evaluates the performance of the controller as the proximity from obstacles,
 -- direction and speed.
 function eval_function(robot)
-    max_proximity = sigma(robot.proximity[1].value)
-    for i = 2, 24 do
+    max_proximity = 0
+    for i = 1, 24 do
         value = sigma(robot.proximity[i].value)
         if max_proximity < value then
             max_proximity = value
