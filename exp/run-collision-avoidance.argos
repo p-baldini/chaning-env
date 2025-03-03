@@ -25,7 +25,7 @@
                 <differential_steering implementation="default" noise_level="0.0"/>
                 <positioning implementation="default" noise_level="0.0" />
             </sensors>
-            <params script="collision_avoidance_instance.lua" />
+            <params script="main_instance.lua" />
         </lua_controller>
     </controllers>
 
