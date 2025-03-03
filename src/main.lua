@@ -1,5 +1,6 @@
-local damage = require ££ DAMAGE_MODULE ££
 local bn = require "bn"
+local damage = require ££ DAMAGE_MODULE ££
+local evaluator = require ££ EVALUATOR ££
 
 -- Seed of the experiment for reproducibility
 SEED = ££ SEED ££
@@ -12,16 +13,16 @@ MAXIMUM_SPEED = 2
 
 -- Number of nodes and bias of the BN
 BN_BIAS = ££ BIAS ££
-BN_NODES_COUNT = 100
+BN_NODES_COUNT = 500
 BN_INPUT_NODES_COUNT = 24
 BN_OUTPUT_NODES_COUNT = 2
 
 -- Threshold to convert from real to binary values 
-LIGHT_THRESHOLD = 0.2
+SENSORY_THRESHOLD = 0.2
 
--- Variables to store the robot distance from light
-start_epoch_distance = 0
-start_experiment_distance = 0
+EXPERIMENT_STEPS = ££ EXPERIMENT_STEPS ££
+EPOCH_STEPS = EXPERIMENT_STEPS / 800
+steps_count = 0
 
 F = {}
 I = {}
@@ -29,34 +30,12 @@ best_F = {}
 best_I = {}
 state = {}
 
-steps_count = 0
-EPOCH_STEPS = 100
-SAFE_STEPS = 100000
-
 in_mapping = {}
 out_mapping = {}
 best_in_mapping = {}
 best_out_mapping = {}
 
-performance = 0
 best_performance = 0
-
-
-
--- Output the Euclidean distance from the light.
-function distance_from_light()
-    x = robot.positioning.position.x
-    y = robot.positioning.position.y
-    return math.sqrt(x^2 + y^2)
-end
-
-
-
--- Evaluates the performance of the controller as the progress towards the
--- light (i.e., how nearer the robot got to the light).
-function eval_function(d0)
-    return d0 - distance_from_light()
-end
 
 
 
@@ -96,6 +75,9 @@ end
 
 -- Set up the experiment.
 function init()
+    print('# seed: \t\t\t' .. SEED)
+    print('# PHASE 1')
+
     bn.set_seed_bn(SEED)
 
     F, I = bn.create_3RBN_bias_nosl(BN_NODES_COUNT, BN_BIAS)
@@ -132,11 +114,10 @@ function init()
     best_I = bn.table_copy(I)
 
     steps_count = 0
-    performance = 0
     best_performance = 0
 
-    start_epoch_distance = distance_from_light()
-    start_experiment_distance = start_epoch_distance
+    -- Start the first evaluation epoch
+    evaluator.new_epoch(robot)
 end
 
 
@@ -147,9 +128,8 @@ function step()
     -- 
 
     -- At half experiment enable the damages of the robot
-    if steps_count == SAFE_STEPS then
-        print('Damage! -- distance: ' .. distance_from_light() .. ' x: ' .. robot.positioning.position.x .. ' y ' .. robot.positioning.position.y)
-        bn.print_vector(best_in_mapping)
+    if steps_count == EXPERIMENT_STEPS / 2 then
+        print('\n# PHASE 2')
         damage.set_damage(FAULTS_COUNT)
     end
 
@@ -160,11 +140,18 @@ function step()
     -- Increment the step counter
     steps_count = steps_count + 1
 
-    -- End of epoch: check if current evaluation is equal to or better than
-    -- previous one
+    -- Update the robot performance according to the latter step
+    evaluator.update(robot)
+
+    -- End of epoch: log results and check if current evaluation is equal to or
+    -- better than previous one
     if math.fmod(steps_count, EPOCH_STEPS) == 0 then
-        -- Update the traveled distance from the position at the start of the epoch
-        performance = eval_function(start_epoch_distance)
+        -- Get the robot performance since the start of the epoch
+        performance = evaluator.performance(robot)
+
+        io.write("- mapping: \t\t\t")
+        bn.print_vector(in_mapping)
+        print('* performance: \t\t' .. performance)
 
         -- Every odd epoch we starts a re-evaluation of the best configuration;
         -- Every even epoch we search for better configuration
@@ -174,14 +161,15 @@ function step()
         -- the best configuration: update its performance;
         -- Alternatively, if we found a better configuration during the 
         -- exploration, set it as the new best.
-        if exploratory_epoch or performance > best_performance then
+        if exploratory_epoch
+        then
+            best_performance = 0.7 * best_performance + 0.3 * performance   -- TODO spoiler?
+        elseif performance > best_performance then
             best_in_mapping = bn.table_copy(in_mapping)
             best_out_mapping = bn.table_copy(out_mapping)
             best_performance = performance
             -- best_F = bn.table_copy(F)
             -- best_I = bn.table_copy(I)
-            log(steps_count .. ' ' .. best_performance)
-            bn.print_vector(best_in_mapping)
         end
 
         -- Set the best coupling as the starting one
@@ -193,13 +181,8 @@ function step()
             change_mapping()
         end
 
-        -- Calculate the current distance from the light
-        start_epoch_distance = distance_from_light()
-
-        print('epoch: ' .. steps_count // EPOCH_STEPS .. ' performance: ' .. performance .. ' distance: ' .. start_epoch_distance)
-
-        -- Reset the performance during the epoch
-        performance = 0
+        -- Start a new evaluation epoch
+        evaluator.new_epoch(robot)
     end
 
     --
@@ -210,11 +193,11 @@ function step()
     outputs = {}
     inputs = {}
     for i = 1, 24 do
-        inputs[i] = robot.light[i].value
+        inputs[i] = robot.££ SENSORS_TYPE ££[i].value
     end
 
     -- Perturb the network by overriding some nodes with the sensory inputs
-    damage.perturb_network(inputs, in_mapping, state, LIGHT_THRESHOLD)
+    damage.perturb_network(inputs, in_mapping, state, SENSORY_THRESHOLD)
 
     -- Update BN state: make an update step
     state = bn.update_3RBN(state, F, I)
@@ -227,16 +210,11 @@ end
 
 
 function reset()
-    -- put your code here
+    -- Nothing
 end
 
 
 
 function destroy()
-    print('SEED ' .. SEED)
-    bn.print_vector(best_in_mapping)
-    print('')
-    print('best ' .. best_performance)
-    print('distance at the start of the experiment: ' .. start_experiment_distance)
-    print('distance at the end of the experiment: ' .. distance_from_light())
+    -- Nothing
 end
