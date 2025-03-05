@@ -9,6 +9,7 @@
 -- @param[in] EPOCH_STEPS the length of an epoch in steps
 -- @param[in] EXPERIMENT_EPOCHS the length of the experiment in epochs
 -- @param[in] SAFE_EPOCHS the number of epochs before a fault occurs
+-- @param[in] SENSORS_TYPE the type of sensors used in the experiment
 -- 
 -- @author Paolo Baldini
 local bn = require "bn"
