@@ -7,7 +7,7 @@
 [ -z "$END_SEED" ] && exit 4
 
 # create an output directory for the experiment results
-OUTPUT_PATH="out/pt/$DAMAGE_MODULE-$BIAS"
+OUTPUT_PATH="out/$DAMAGE_MODULE-$BIAS"
 mkdir -p $OUTPUT_PATH
 
 for SEED in $(seq $START_SEED $END_SEED)
