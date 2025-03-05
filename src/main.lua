@@ -1,3 +1,16 @@
+-- Main experiment logic.
+-- 
+-- The user should provide:
+-- @param[in] DAMAGE_MODULE the type of damage to use
+-- @param[in] EVALUATOR the evaluator of the robot behavior
+-- @param[in] SEED the seed of the experiment
+-- @param[in] NUMBER_OF_FAULTS the number of damaged transducers of the robot
+-- @param[in] BIAS the BN bias
+-- @param[in] EPOCH_STEPS the length of an epoch in steps
+-- @param[in] EXPERIMENT_EPOCHS the length of the experiment in epochs
+-- @param[in] SAFE_EPOCHS the number of epochs before a fault occurs
+-- 
+-- @author Paolo Baldini
 local bn = require "bn"
 local damage = require ££ DAMAGE_MODULE ££
 local evaluator = require ££ EVALUATOR ££
@@ -20,8 +33,9 @@ BN_OUTPUT_NODES_COUNT = 2
 -- Threshold to convert from real to binary values 
 SENSORY_THRESHOLD = 0.2
 
-EXPERIMENT_STEPS = ££ EXPERIMENT_STEPS ££
-EPOCH_STEPS = EXPERIMENT_STEPS / 800
+EPOCH_STEPS = ££ EPOCH_STEPS ££
+EXPERIMENT_STEPS = ££ EXPERIMENT_EPOCHS ££ * EPOCH_STEPS
+FAULT_INSTANT = ££ SAFE_EPOCHS ££ * EPOCH_STEPS
 steps_count = 0
 
 F = {}
@@ -128,7 +142,7 @@ function step()
     -- 
 
     -- At half experiment enable the damages of the robot
-    if steps_count == EXPERIMENT_STEPS / 2 then
+    if steps_count == FAULT_INSTANT then
         print('\n# PHASE 2')
         damage.set_damage(FAULTS_COUNT)
     end
@@ -163,7 +177,7 @@ function step()
         -- exploration, set it as the new best.
         if exploratory_epoch
         then
-            best_performance = 0.7 * best_performance + 0.3 * performance   -- TODO spoiler?
+            best_performance = 0.7 * best_performance + 0.3 * performance
         elseif performance > best_performance then
             best_in_mapping = bn.table_copy(in_mapping)
             best_out_mapping = bn.table_copy(out_mapping)
