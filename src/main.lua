@@ -7,7 +7,6 @@
 -- @param[in] NUMBER_OF_FAULTS the number of damaged transducers of the robot
 -- @param[in] BIAS the BN bias
 -- @param[in] EPOCH_STEPS the length of an epoch in steps
--- @param[in] EXPERIMENT_EPOCHS the length of the experiment in epochs
 -- @param[in] SAFE_EPOCHS the number of epochs before a fault occurs
 -- @param[in] SENSORS_TYPE the type of sensors used in the experiment
 -- 
@@ -35,7 +34,6 @@ BN_OUTPUT_NODES_COUNT = 2
 SENSORY_THRESHOLD = 0.2
 
 EPOCH_STEPS = ££ EPOCH_STEPS ££
-EXPERIMENT_STEPS = ££ EXPERIMENT_EPOCHS ££ * EPOCH_STEPS
 FAULT_INSTANT = ££ SAFE_EPOCHS ££ * EPOCH_STEPS
 steps_count = 0
 
@@ -178,7 +176,7 @@ function step()
         -- exploration, set it as the new best.
         if exploratory_epoch
         then
-            best_performance = 0.7 * best_performance + 0.3 * performance
+            best_performance = 0.5 * best_performance + 0.5 * performance
         elseif performance > best_performance then
             best_in_mapping = bn.table_copy(in_mapping)
             best_out_mapping = bn.table_copy(out_mapping)
