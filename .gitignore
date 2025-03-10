@@ -5,3 +5,7 @@
 *.png
 *.out
 *.yaml
+
+# Folders
+
+*_experiment
