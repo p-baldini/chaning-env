@@ -12,7 +12,7 @@ do
     cd $WORK_DIR
 
     # start the experiments in parallel
-    BIAS=0.79 START_SEED=0 END_SEED=999 DAMAGE_MODULE=$DAMAGE_MODULE nohup ./start_ca_experiment.sh &
+    BIAS=0.79 START_SEED=1 END_SEED=1000 DAMAGE_MODULE=$DAMAGE_MODULE nohup ./start_ca_experiment.sh &
 
     cd $ROOT_DIR
 done
