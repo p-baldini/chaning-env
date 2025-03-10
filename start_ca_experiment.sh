@@ -1,10 +1,10 @@
 #!/bin/sh
 
 # check that the variables of the experiment are set to a non empty value
-[ -z "$BIAS" ] && exit 1
-[ -z "$DAMAGE_MODULE" ] && exit 2
-[ -z "$START_SEED" ] && exit 3
-[ -z "$END_SEED" ] && exit 4
+[ -z "$BIAS" ] &&          echo "[ERROR] Missing parameter BIAS" &&          exit 1
+[ -z "$DAMAGE_MODULE" ] && echo "[ERROR] Missing parameter DAMAGE_MODULE" && exit 2
+[ -z "$START_SEED" ] &&    echo "[ERROR] Missing parameter START_SEED" &&    exit 3
+[ -z "$END_SEED" ] &&      echo "[ERROR] Missing parameter END_SEED" &&      exit 4
 
 # create an output directory for the experiment results
 OUTPUT_PATH="out/$START_SEED-$END_SEED"
@@ -35,9 +35,8 @@ do
         sed -i "s|££ BIAS ££|$BIAS|" "main_instance.lua"
         sed -i "s|££ NUMBER_OF_FAULTS ££|$N_FAULTS|" "main_instance.lua"
         sed -i "s|££ EVALUATOR ££|\"eval_ca\"|" "main_instance.lua"
-        sed -i "s|££ EPOCH_STEPS ££|1000|" "main_instance.lua"
-        sed -i "s|££ EXPERIMENT_EPOCHS ££|1500|" "main_instance.lua"
-        sed -i "s|££ SAFE_EPOCHS ££|750|" "main_instance.lua"
+        sed -i "s|££ EPOCH_STEPS ££|500|" "main_instance.lua"
+        sed -i "s|££ SAFE_EPOCHS ££|360|" "main_instance.lua"   # length experiment (36000s) * steps per second (10) / steps per epochs (500) / phase count (2)
         sed -i "s|££ SENSORS_TYPE ££|proximity|" "main_instance.lua"
         sed -i "s|random_seed=\"1\"|random_seed=\"$SEED\"|" "run-collision-avoidance_instance.argos"
 
