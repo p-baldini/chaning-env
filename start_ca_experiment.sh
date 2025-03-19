@@ -35,8 +35,8 @@ do
         sed -i "s|££ BIAS ££|$BIAS|" "main_instance.lua"
         sed -i "s|££ NUMBER_OF_FAULTS ££|$N_FAULTS|" "main_instance.lua"
         sed -i "s|££ EVALUATOR ££|\"eval_ca\"|" "main_instance.lua"
-        sed -i "s|££ EPOCH_STEPS ££|750|" "main_instance.lua"
-        sed -i "s|££ SAFE_EPOCHS ££|480|" "main_instance.lua"   # length experiment (72000s) * steps per second (10) / steps per epochs (750) / phase count (2)
+        sed -i "s|££ EPOCH_STEPS ££|1500|" "main_instance.lua"
+        sed -i "s|££ SAFE_EPOCHS ££|480|" "main_instance.lua"   # length experiment (144000s) * steps per second (10) / steps per epochs (1500) / phase count (2)
         sed -i "s|££ SENSORS_TYPE ££|proximity|" "main_instance.lua"
         sed -i "s|random_seed=\"1\"|random_seed=\"$SEED\"|" "run-collision-avoidance_instance.argos"
 

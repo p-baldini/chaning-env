@@ -7,7 +7,7 @@
     <!-- ************************* -->
     <framework>
         <system threads="0" />
-        <experiment length="72000"
+        <experiment length="144000"
                     ticks_per_second="10"
                     random_seed="1"/>
     </framework>
@@ -80,14 +80,5 @@
     <!-- * Visualization * -->
     <!-- ****************** -->
     <visualization/>
-    <!-- <visualization>
-        <qt-opengl lua_editor="false">
-            <camera>
-                <placements>
-                    <placement index="0" position="0, 0, 2.5" look_at="0, 0, 0" lens_focal_length="20" />
-                </placements>
-            </camera>
-        </qt-opengl>
-    </visualization> -->
 
 </argos-configuration>
