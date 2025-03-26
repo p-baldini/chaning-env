@@ -6,9 +6,12 @@ local broken = { false, false }
 -- Set the damage to the sensor and actuators. Select at random an actuator to
 -- damage, setting its speed to half the ordinary one.
 function damage.set_damage(number_of_faults)
-    if number_of_faults > 0 then
+    if number_of_faults == 1 then
         index = math.random(0, 1) + 1
         broken[index] = true
+    elseif number_of_faults == 2 then
+        broken[1] = true
+        broken[2] = true
     end
 end
 
