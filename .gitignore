@@ -1,11 +1,16 @@
 # Files
 
-*.txt
+*.html
+*.jl
 *.pdf
 *.png
 *.out
+*.txt
 *.yaml
 
 # Folders
 
+.ipynb_checkpoints
+.vscode
+test*
 *_experiment
