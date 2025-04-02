@@ -3,4 +3,4 @@ WORKDIR     /home
 
 COPY        gym/*       /home
 COPY        src/*       /home
-COPY        exp/*.sh    /home
+COPY        shl/*.sh    /home
