@@ -7,7 +7,7 @@ local performance = nil
 
 -- Round to 1 values greater or similar to 1.
 function sigma(x)
-    if x > 0.9 then -- TODO no else?
+    if x > 0.9 then
         x = 1
     end
     return x
