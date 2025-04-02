@@ -5,9 +5,10 @@
 [ -z "$DAMAGE_MODULE" ] && echo "[ERROR] Missing parameter DAMAGE_MODULE" && exit 2
 [ -z "$START_SEED" ] &&    echo "[ERROR] Missing parameter START_SEED" &&    exit 3
 [ -z "$END_SEED" ] &&      echo "[ERROR] Missing parameter END_SEED" &&      exit 4
+[ -z "$WORK_DIR" ] &&      echo "[ERROR] Missing parameter WORK_DIR" &&      exit 5
 
 # create an output directory for the experiment results
-OUTPUT_PATH="out/$START_SEED-$END_SEED"
+OUTPUT_PATH="$WORK_DIR/v1.0.1_ca/$DAMAGE_MODULE"
 mkdir -p $OUTPUT_PATH
 
 for SEED in $(seq $START_SEED $END_SEED)
