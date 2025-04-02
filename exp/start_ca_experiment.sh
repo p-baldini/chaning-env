@@ -28,7 +28,7 @@ do
         fi
         # create an instance of the controller for the specific experiment
         cp main.lua main_instance.lua
-        cp run-collision-avoidance.argos run-collision-avoidance_instance.argos
+        cp collision-avoidance.argos collision-avoidance_instance.argos
 
         # set up the controller with the experiment parameters
         sed -i "s|££ DAMAGE_MODULE ££|\"$DAMAGE_MODULE\"|" "main_instance.lua"
@@ -39,9 +39,9 @@ do
         sed -i "s|££ EPOCH_STEPS ££|1500|" "main_instance.lua"
         sed -i "s|££ SAFE_EPOCHS ££|480|" "main_instance.lua"   # length experiment (144000s) * steps per second (10) / steps per epochs (1500) / phase count (2)
         sed -i "s|££ SENSORS_TYPE ££|proximity|" "main_instance.lua"
-        sed -i "s|random_seed=\"1\"|random_seed=\"$SEED\"|" "run-collision-avoidance_instance.argos"
+        sed -i "s|random_seed=\"1\"|random_seed=\"$SEED\"|" "collision-avoidance_instance.argos"
 
         # launch the argos3 experiment and save the results to a file
-        argos3 -n -c run-collision-avoidance_instance.argos | grep -v INFO > "$OUTPUT_PATH/f$N_FAULTS-s$SEED.txt"
+        argos3 -n -c collision-avoidance_instance.argos | grep -v INFO > "$OUTPUT_PATH/f$N_FAULTS-s$SEED.txt"
     done
 done
