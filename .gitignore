@@ -1,7 +1,9 @@
 # Files
 
+*.gif
 *.html
 *.jl
+*.mp4
 *.pdf
 *.png
 *.out
