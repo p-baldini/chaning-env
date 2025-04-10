@@ -27,5 +27,5 @@ docker run --rm --network=host -e DISPLAY \
     -e START_SEED=1 \
     -e END_SEED=2 \
     -e WORK_DIR=out \
-    quay.io/p-baldini/experiment_2025-03-28:1.0.1
+    quay.io/p-baldini/experiment_2025-03-28:1.0.2
 ```

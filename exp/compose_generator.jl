@@ -1,6 +1,6 @@
 using Base.Iterators
 
-const IMAGE_NAME="quay.io/p-baldini/experiment_2025-03-28:1.0.1"
+const IMAGE_NAME="quay.io/p-baldini/experiment_2025-03-28:1.0.2"
 const WORK_DIR="/home/persistent/2025-03-28_experiment"
 const EXP="ca"
 # const EXP="pt"
