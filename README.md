@@ -12,8 +12,8 @@ The repository is organized as follows:
 Finally, the Docker file is used to build the experiment image that will be pushed to a public repository:
 
 ```
-docker build --network=host --tag quay.io/p-baldini/experiment_2025-03-28:1.0.1 .
-docker push quay.io/p-baldini/experiment_2025-03-28:1.0.1
+docker build --network=host --tag quay.io/p-baldini/experiment_2025-03-28:1.0.2 .
+docker push quay.io/p-baldini/experiment_2025-03-28:1.0.2
 ```
 
 If you want to run or test the docker image locally you can use the following commands:
