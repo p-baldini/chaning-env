@@ -1,5 +1,7 @@
 using Base.Iterators
 
+const IMAGE_NAME="quay.io/p-baldini/experiment_2025-03-28:1.0.1"
+
 file = open("compose.yaml", "w")
 
 header =
@@ -22,14 +24,14 @@ DAMAGE_TYPES = [
     "dmg_sns_random"
 ]
 SEED_RANGES = zip(
-    (0:10 |> collect) .* 50 .+ 1,
-    (1:10 |> collect) .* 50
+    (0:50 |> collect) .* 50 .+ 1,
+    (1:50 |> collect) .* 50
 )
 
 template(EXPERIMENT_TYPE, DAMAGE_TYPE, S_SEED, E_SEED) = 
 """
   $EXPERIMENT_TYPE-$DAMAGE_TYPE-$S_SEED-$E_SEED:
-    image: pbaldini/experiment_2024-12-01
+    image: pbaldini/$IMAGE_NAME
     environment:
       - BIAS=0.79
       - DAMAGE_MODULE=$DAMAGE_TYPE
