@@ -1,6 +1,7 @@
 # Experiments Graceful Degradation 2
 
 This repository contains the code used in the second article about the graceful degradation and performance recovery thanks to online adaptation in robots subject to damages.
+The start-up of specific instances of the experiment is managed through environmental variables set when starting the docker image.
 
 The repository is organized as follows:
 - `exp` contains the docker-compose files to run the two experiments
