@@ -5,9 +5,10 @@
 [ -z "$DAMAGE_MODULE" ] && echo "[ERROR] Missing parameter DAMAGE_MODULE" && exit 2
 [ -z "$START_SEED" ] &&    echo "[ERROR] Missing parameter START_SEED" &&    exit 3
 [ -z "$END_SEED" ] &&      echo "[ERROR] Missing parameter END_SEED" &&      exit 4
+[ -z "$WORK_DIR" ] &&      echo "[ERROR] Missing parameter WORK_DIR" &&      exit 5
 
 # create an output directory for the experiment results
-OUTPUT_PATH="out/$START_SEED-$END_SEED"
+OUTPUT_PATH="$WORK_DIR/v1.0.1_pt/$DAMAGE_MODULE"
 mkdir -p $OUTPUT_PATH
 
 for SEED in $(seq $START_SEED $END_SEED)
@@ -27,7 +28,7 @@ do
         fi
         # create an instance of the controller for the specific experiment
         cp main.lua main_instance.lua
-        cp run-phototaxis.argos run-phototaxis_instance.argos
+        cp phototaxis.argos phototaxis_instance.argos
 
         # set up the controller with the experiment parameters
         sed -i "s|££ DAMAGE_MODULE ££|\"$DAMAGE_MODULE\"|" "main_instance.lua"
@@ -35,12 +36,12 @@ do
         sed -i "s|££ BIAS ££|$BIAS|" "main_instance.lua"
         sed -i "s|££ NUMBER_OF_FAULTS ££|$N_FAULTS|" "main_instance.lua"
         sed -i "s|££ EVALUATOR ££|\"eval_pt\"|" "main_instance.lua"
-        sed -i "s|££ EPOCH_STEPS ££|250|" "main_instance.lua"
-        sed -i "s|££ SAFE_EPOCHS ££|150|" "main_instance.lua"
+        sed -i "s|££ EPOCH_STEPS ££|450|" "main_instance.lua"
+        sed -i "s|££ SAFE_EPOCHS ££|480|" "main_instance.lua"
         sed -i "s|££ SENSORS_TYPE ££|light|" "main_instance.lua"
-        sed -i "s|random_seed=\"1\"|random_seed=\"$SEED\"|" "run-phototaxis_instance.argos"
+        sed -i "s|random_seed=\"1\"|random_seed=\"$SEED\"|" "phototaxis_instance.argos"
 
         # launch the argos3 experiment and save the results to a file
-        argos3 -n -c run-phototaxis_instance.argos | grep -v INFO > "$OUTPUT_PATH/f$N_FAULTS-s$SEED.txt"
+        argos3 -n -c phototaxis_instance.argos | grep -v INFO > "$OUTPUT_PATH/f$N_FAULTS-s$SEED.txt"
     done
 done

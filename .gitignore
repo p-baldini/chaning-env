@@ -1,11 +1,12 @@
 # Files
 
+*.gif
 *.html
+*.mp4
 *.pdf
 *.png
 *.out
 *.txt
-*.yaml
 
 # Folders
 
