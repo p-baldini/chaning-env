@@ -7,9 +7,10 @@ local broken = { false, false }
 -- damage, setting its speed to half the ordinary one.
 function damage.set_damage(number_of_faults)
     if number_of_faults == 1 then
-        index = math.random(0, 1) + 1
+        index = math.random(1, 2)
         broken[index] = true
-    elseif number_of_faults == 2 then
+    end
+    if number_of_faults == 2 then
         broken[1] = true
         broken[2] = true
     end
@@ -40,8 +41,14 @@ end
 -- @param[in, out] outputs: the actuator control values to be set.
 -- @param[in] max_speed: the maximum wheels speed.
 function damage.extract_output(state, mapping, outputs, max_speed)
-    outputs[1] = state[mapping[1]] * max_speed / (broken[1] and 2 or 1)
-    outputs[2] = state[mapping[2]] * max_speed / (broken[2] and 2 or 1)
+    outputs[1] = state[mapping[1]] * max_speed
+    outputs[2] = state[mapping[2]] * max_speed
+    if broken[1] then
+        outputs[1] = outputs[1] / 2
+    end
+    if broken[2] then
+        outputs[2] = outputs[2] / 2
+    end
 end
 
 return damage

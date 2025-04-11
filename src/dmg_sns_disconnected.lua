@@ -11,12 +11,14 @@ end
 -- 
 -- @param[in] number_of_faults: the number of damaged sensors.
 function damage.set_damage(number_of_faults)
-    sample = math.random(1, 24)
-    for i = 1, number_of_faults do
-        broken[sample] = true
-        sample = sample + 1
-        if sample > 24 then
-            sample = 1
+    if number_of_faults > 0 then
+        sample = math.random(1, 24)
+        for i = 1, number_of_faults do
+            broken[sample] = true
+            sample = sample + 1
+            if sample > 24 then
+                sample = 1
+            end
         end
     end
 end

@@ -1,6 +1,11 @@
 using Base.Iterators
 
-file = open("compose.yaml", "w")
+const IMAGE_NAME="quay.io/p-baldini/experiment_2025-03-28:1.0.2"
+const WORK_DIR="/home/persistent/2025-03-28_experiment"
+const EXP="ca"
+# const EXP="pt"
+
+file = open("compose-$EXP.yaml", "w")
 
 header =
 """
@@ -10,11 +15,6 @@ services:
 """
 write(file, header)
 
-EXPERIMENT_TYPES = [
-    "collision_avoidance",
-    "phototaxis"
-]
-
 DAMAGE_TYPES = [
     "dmg_act_slowed",
     "dmg_sns_disconnected",
@@ -22,15 +22,16 @@ DAMAGE_TYPES = [
     "dmg_sns_random"
 ]
 SEED_RANGES = zip(
-    (0:10 |> collect) .* 50 .+ 1,
-    (1:10 |> collect) .* 50
+    (0:50 |> collect) .* 50 .+ 1,
+    (1:50 |> collect) .* 50
 )
 
-template(EXPERIMENT_TYPE, DAMAGE_TYPE, S_SEED, E_SEED) = 
+template(DAMAGE_TYPE, S_SEED, E_SEED) = 
 """
-  $EXPERIMENT_TYPE-$DAMAGE_TYPE-$S_SEED-$E_SEED:
-    image: pbaldini/experiment_2024-12-01
+  $EXP-$DAMAGE_TYPE-$S_SEED-$E_SEED:
+    image: $IMAGE_NAME
     environment:
+      - WORK_DIR=$WORK_DIR
       - BIAS=0.79
       - DAMAGE_MODULE=$DAMAGE_TYPE
       - START_SEED=$S_SEED
@@ -41,15 +42,12 @@ template(EXPERIMENT_TYPE, DAMAGE_TYPE, S_SEED, E_SEED) =
         target: /dev/shm
         tmpfs:
            size: 131072
-    entrypoint: "/home/start_$EXPERIMENT_TYPE.sh"
-    restart: "no"
+    entrypoint: "/home/start_$(EXP)_experiment.sh"
 """
 
-for et in EXPERIMENT_TYPES
-    for dt in DAMAGE_TYPES
-        for (ss, es) in SEED_RANGES
-            write(file, template(et, dt, ss, es))
-        end
+for dt in DAMAGE_TYPES
+    for (ss, es) in SEED_RANGES
+        write(file, template(dt, ss, es))
     end
 end
 
@@ -57,7 +55,7 @@ volumes =
 """
 volumes:
   data:
-    name: p.baldini-volume
+    name: paolo.baldini-volume
 """
 write(file, volumes)
 
