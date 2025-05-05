@@ -91,6 +91,12 @@ function init()
     print('# seed: \t\t\t' .. SEED)
     print('# PHASE 1')
 
+    io.write('# position ')
+    print(robot.positioning.position)
+
+    io.write('# orientation ')
+    print(robot.positioning.orientation)
+
     bn.set_seed_bn(SEED)
 
     F, I = bn.create_3RBN_bias_nosl(BN_NODES_COUNT, BN_BIAS)
@@ -143,6 +149,13 @@ function step()
     -- At half experiment enable the damages of the robot
     if steps_count == FAULT_INSTANT then
         print('\n# PHASE 2')
+
+        io.write('# position ')
+        print(robot.positioning.position)
+
+        io.write('# orientation ')
+        print(robot.positioning.orientation)
+
         damage.set_damage(FAULTS_COUNT)
     end
 

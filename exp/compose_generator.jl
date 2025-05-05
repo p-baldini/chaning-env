@@ -1,9 +1,11 @@
 using Base.Iterators
 
-const IMAGE_NAME="quay.io/p-baldini/experiment_2025-03-28:1.0.2"
-const WORK_DIR="/home/persistent/2025-03-28_experiment"
-const EXP="ca"
-# const EXP="pt"
+const IMAGE_NAME="quay.io/p-baldini/experiment_2025-05-05:1.0.3"
+const WORK_DIR="/home/persistent/2025-05-05_experiment"
+const EXP="ca-informed"
+# const EXP="ca-clueless"
+# const EXP="pt-informed"
+# const EXP="pt-clueless"
 
 file = open("compose-$EXP.yaml", "w")
 
