@@ -22,11 +22,6 @@ function evaluator.new_epoch(robot)
         robot.positioning.position.y .. ',' ..
         robot.positioning.position.z
     )
-    print('^ rotation [x,y,z]: ' ..
-        robot.positioning.orientation.axis.x .. ',' ..
-        robot.positioning.orientation.axis.y .. ',' ..
-        robot.positioning.orientation.axis.z
-    )
     print('^ distance: ' .. start_epoch_distance)
 end
 

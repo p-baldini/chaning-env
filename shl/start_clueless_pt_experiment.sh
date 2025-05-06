@@ -47,9 +47,6 @@ do
         P=$(cat "$INPUT_PATH/f$N_FAULTS-s$SEED.txt" | grep position | tail -n 1 | awk '{print $4}')
         sed -i "s|position="0,0,0"|$P|" "phototaxis_instance.argos"
 
-        P=$(cat "$INPUT_PATH/f$N_FAULTS-s$SEED.txt" | grep rotation | tail -n 1 | awk '{print $4}')
-        sed -i "s|orientation="0,0,0"|$P|" "phototaxis_instance.argos"
-
         # launch the argos3 experiment and save the results to a file
         argos3 -n -c phototaxis_instance.argos | grep -v INFO > "$OUTPUT_PATH/f$N_FAULTS-s$SEED.txt"
     done
