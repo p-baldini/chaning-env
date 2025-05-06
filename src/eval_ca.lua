@@ -18,6 +18,16 @@ end
 -- Initialize a new evaluation period
 function evaluator.new_epoch(robot)
     performance = 0
+    print('^ position [x,y,z]: ' ..
+        robot.positioning.position.x .. ',' ..
+        robot.positioning.position.y .. ',' ..
+        robot.positioning.position.z
+    )
+    print('^ rotation [x,y,z]: ' ..
+        robot.positioning.orientation.x .. ',' ..
+        robot.positioning.orientation.y .. ',' ..
+        robot.positioning.orientation.z
+    )
 end
 
 

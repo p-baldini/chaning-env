@@ -17,11 +17,17 @@ end
 -- Initialize a new evaluation period
 function evaluator.new_epoch(robot)
     start_epoch_distance = distance_from_light(robot)
-    print('^' ..
-        ' x: ' .. robot.positioning.position.x ..
-        ' y: ' .. robot.positioning.position.y ..
-        ' d: ' .. start_epoch_distance
+    print('^ position [x,y,z]: ' ..
+        robot.positioning.position.x .. ',' ..
+        robot.positioning.position.y .. ',' ..
+        robot.positioning.position.z
     )
+    print('^ rotation [x,y,z]: ' ..
+        robot.positioning.orientation.x .. ',' ..
+        robot.positioning.orientation.y .. ',' ..
+        robot.positioning.orientation.z
+    )
+    print('^ distance: ' .. start_epoch_distance)
 end
 
 

@@ -44,10 +44,10 @@ do
         sed -i "s|££ SENSORS_TYPE ££|light|" "main_instance.lua"
         sed -i "s|random_seed=\"1\"|random_seed=\"$SEED\"|" "phototaxis_instance.argos"
 
-        P=$(cat "$INPUT_PATH/f$N_FAULTS-s$SEED.txt" | grep position | tail -n 1 | awk '{print $3}')
+        P=$(cat "$INPUT_PATH/f$N_FAULTS-s$SEED.txt" | grep position | tail -n 1 | awk '{print $4}')
         sed -i "s|position="0,0,0"|$P|" "phototaxis_instance.argos"
 
-        P=$(cat "$INPUT_PATH/f$N_FAULTS-s$SEED.txt" | grep orientation | tail -n 1 | awk '{print $3}')
+        P=$(cat "$INPUT_PATH/f$N_FAULTS-s$SEED.txt" | grep rotation | tail -n 1 | awk '{print $4}')
         sed -i "s|orientation="0,0,0"|$P|" "phototaxis_instance.argos"
 
         # launch the argos3 experiment and save the results to a file
