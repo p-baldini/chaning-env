@@ -1,7 +1,7 @@
 using Base.Iterators
 
-const IMAGE_NAME="quay.io/p-baldini/experiment_2025-05-05:1.0.3"
-const WORK_DIR="/home/persistent/2025-05-05_experiment"
+const IMAGE_NAME="quay.io/p-baldini/2025-egd:1.0.3"
+const WORK_DIR="/home/persistent/2025-egd-1.0.3"
 const EXP="ca-informed"
 # const EXP="ca-clueless"
 # const EXP="pt-informed"
