@@ -4,7 +4,7 @@ services:
   ca-dmg_act_slowed-1-50:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_act_slowed
       - START_SEED=1
@@ -19,7 +19,7 @@ services:
   ca-dmg_act_slowed-51-100:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_act_slowed
       - START_SEED=51
@@ -34,7 +34,7 @@ services:
   ca-dmg_act_slowed-101-150:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_act_slowed
       - START_SEED=101
@@ -49,7 +49,7 @@ services:
   ca-dmg_act_slowed-151-200:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_act_slowed
       - START_SEED=151
@@ -64,7 +64,7 @@ services:
   ca-dmg_act_slowed-201-250:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_act_slowed
       - START_SEED=201
@@ -79,7 +79,7 @@ services:
   ca-dmg_act_slowed-251-300:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_act_slowed
       - START_SEED=251
@@ -94,7 +94,7 @@ services:
   ca-dmg_act_slowed-301-350:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_act_slowed
       - START_SEED=301
@@ -109,7 +109,7 @@ services:
   ca-dmg_act_slowed-351-400:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_act_slowed
       - START_SEED=351
@@ -124,7 +124,7 @@ services:
   ca-dmg_act_slowed-401-450:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_act_slowed
       - START_SEED=401
@@ -139,7 +139,7 @@ services:
   ca-dmg_act_slowed-451-500:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_act_slowed
       - START_SEED=451
@@ -154,7 +154,7 @@ services:
   ca-dmg_act_slowed-501-550:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_act_slowed
       - START_SEED=501
@@ -169,7 +169,7 @@ services:
   ca-dmg_act_slowed-551-600:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_act_slowed
       - START_SEED=551
@@ -184,7 +184,7 @@ services:
   ca-dmg_act_slowed-601-650:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_act_slowed
       - START_SEED=601
@@ -199,7 +199,7 @@ services:
   ca-dmg_act_slowed-651-700:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_act_slowed
       - START_SEED=651
@@ -214,7 +214,7 @@ services:
   ca-dmg_act_slowed-701-750:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_act_slowed
       - START_SEED=701
@@ -229,7 +229,7 @@ services:
   ca-dmg_act_slowed-751-800:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_act_slowed
       - START_SEED=751
@@ -244,7 +244,7 @@ services:
   ca-dmg_act_slowed-801-850:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_act_slowed
       - START_SEED=801
@@ -259,7 +259,7 @@ services:
   ca-dmg_act_slowed-851-900:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_act_slowed
       - START_SEED=851
@@ -274,7 +274,7 @@ services:
   ca-dmg_act_slowed-901-950:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_act_slowed
       - START_SEED=901
@@ -289,7 +289,7 @@ services:
   ca-dmg_act_slowed-951-1000:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_act_slowed
       - START_SEED=951
@@ -304,7 +304,7 @@ services:
   ca-dmg_act_slowed-1001-1050:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_act_slowed
       - START_SEED=1001
@@ -319,7 +319,7 @@ services:
   ca-dmg_act_slowed-1051-1100:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_act_slowed
       - START_SEED=1051
@@ -334,7 +334,7 @@ services:
   ca-dmg_act_slowed-1101-1150:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_act_slowed
       - START_SEED=1101
@@ -349,7 +349,7 @@ services:
   ca-dmg_act_slowed-1151-1200:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_act_slowed
       - START_SEED=1151
@@ -364,7 +364,7 @@ services:
   ca-dmg_act_slowed-1201-1250:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_act_slowed
       - START_SEED=1201
@@ -379,7 +379,7 @@ services:
   ca-dmg_act_slowed-1251-1300:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_act_slowed
       - START_SEED=1251
@@ -394,7 +394,7 @@ services:
   ca-dmg_act_slowed-1301-1350:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_act_slowed
       - START_SEED=1301
@@ -409,7 +409,7 @@ services:
   ca-dmg_act_slowed-1351-1400:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_act_slowed
       - START_SEED=1351
@@ -424,7 +424,7 @@ services:
   ca-dmg_act_slowed-1401-1450:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_act_slowed
       - START_SEED=1401
@@ -439,7 +439,7 @@ services:
   ca-dmg_act_slowed-1451-1500:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_act_slowed
       - START_SEED=1451
@@ -454,7 +454,7 @@ services:
   ca-dmg_act_slowed-1501-1550:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_act_slowed
       - START_SEED=1501
@@ -469,7 +469,7 @@ services:
   ca-dmg_act_slowed-1551-1600:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_act_slowed
       - START_SEED=1551
@@ -484,7 +484,7 @@ services:
   ca-dmg_act_slowed-1601-1650:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_act_slowed
       - START_SEED=1601
@@ -499,7 +499,7 @@ services:
   ca-dmg_act_slowed-1651-1700:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_act_slowed
       - START_SEED=1651
@@ -514,7 +514,7 @@ services:
   ca-dmg_act_slowed-1701-1750:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_act_slowed
       - START_SEED=1701
@@ -529,7 +529,7 @@ services:
   ca-dmg_act_slowed-1751-1800:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_act_slowed
       - START_SEED=1751
@@ -544,7 +544,7 @@ services:
   ca-dmg_act_slowed-1801-1850:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_act_slowed
       - START_SEED=1801
@@ -559,7 +559,7 @@ services:
   ca-dmg_act_slowed-1851-1900:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_act_slowed
       - START_SEED=1851
@@ -574,7 +574,7 @@ services:
   ca-dmg_act_slowed-1901-1950:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_act_slowed
       - START_SEED=1901
@@ -589,7 +589,7 @@ services:
   ca-dmg_act_slowed-1951-2000:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_act_slowed
       - START_SEED=1951
@@ -604,7 +604,7 @@ services:
   ca-dmg_act_slowed-2001-2050:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_act_slowed
       - START_SEED=2001
@@ -619,7 +619,7 @@ services:
   ca-dmg_act_slowed-2051-2100:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_act_slowed
       - START_SEED=2051
@@ -634,7 +634,7 @@ services:
   ca-dmg_act_slowed-2101-2150:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_act_slowed
       - START_SEED=2101
@@ -649,7 +649,7 @@ services:
   ca-dmg_act_slowed-2151-2200:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_act_slowed
       - START_SEED=2151
@@ -664,7 +664,7 @@ services:
   ca-dmg_act_slowed-2201-2250:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_act_slowed
       - START_SEED=2201
@@ -679,7 +679,7 @@ services:
   ca-dmg_act_slowed-2251-2300:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_act_slowed
       - START_SEED=2251
@@ -694,7 +694,7 @@ services:
   ca-dmg_act_slowed-2301-2350:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_act_slowed
       - START_SEED=2301
@@ -709,7 +709,7 @@ services:
   ca-dmg_act_slowed-2351-2400:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_act_slowed
       - START_SEED=2351
@@ -724,7 +724,7 @@ services:
   ca-dmg_act_slowed-2401-2450:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_act_slowed
       - START_SEED=2401
@@ -739,7 +739,7 @@ services:
   ca-dmg_act_slowed-2451-2500:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_act_slowed
       - START_SEED=2451
@@ -754,7 +754,7 @@ services:
   ca-dmg_sns_disconnected-1-50:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_disconnected
       - START_SEED=1
@@ -769,7 +769,7 @@ services:
   ca-dmg_sns_disconnected-51-100:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_disconnected
       - START_SEED=51
@@ -784,7 +784,7 @@ services:
   ca-dmg_sns_disconnected-101-150:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_disconnected
       - START_SEED=101
@@ -799,7 +799,7 @@ services:
   ca-dmg_sns_disconnected-151-200:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_disconnected
       - START_SEED=151
@@ -814,7 +814,7 @@ services:
   ca-dmg_sns_disconnected-201-250:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_disconnected
       - START_SEED=201
@@ -829,7 +829,7 @@ services:
   ca-dmg_sns_disconnected-251-300:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_disconnected
       - START_SEED=251
@@ -844,7 +844,7 @@ services:
   ca-dmg_sns_disconnected-301-350:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_disconnected
       - START_SEED=301
@@ -859,7 +859,7 @@ services:
   ca-dmg_sns_disconnected-351-400:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_disconnected
       - START_SEED=351
@@ -874,7 +874,7 @@ services:
   ca-dmg_sns_disconnected-401-450:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_disconnected
       - START_SEED=401
@@ -889,7 +889,7 @@ services:
   ca-dmg_sns_disconnected-451-500:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_disconnected
       - START_SEED=451
@@ -904,7 +904,7 @@ services:
   ca-dmg_sns_disconnected-501-550:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_disconnected
       - START_SEED=501
@@ -919,7 +919,7 @@ services:
   ca-dmg_sns_disconnected-551-600:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_disconnected
       - START_SEED=551
@@ -934,7 +934,7 @@ services:
   ca-dmg_sns_disconnected-601-650:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_disconnected
       - START_SEED=601
@@ -949,7 +949,7 @@ services:
   ca-dmg_sns_disconnected-651-700:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_disconnected
       - START_SEED=651
@@ -964,7 +964,7 @@ services:
   ca-dmg_sns_disconnected-701-750:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_disconnected
       - START_SEED=701
@@ -979,7 +979,7 @@ services:
   ca-dmg_sns_disconnected-751-800:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_disconnected
       - START_SEED=751
@@ -994,7 +994,7 @@ services:
   ca-dmg_sns_disconnected-801-850:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_disconnected
       - START_SEED=801
@@ -1009,7 +1009,7 @@ services:
   ca-dmg_sns_disconnected-851-900:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_disconnected
       - START_SEED=851
@@ -1024,7 +1024,7 @@ services:
   ca-dmg_sns_disconnected-901-950:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_disconnected
       - START_SEED=901
@@ -1039,7 +1039,7 @@ services:
   ca-dmg_sns_disconnected-951-1000:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_disconnected
       - START_SEED=951
@@ -1054,7 +1054,7 @@ services:
   ca-dmg_sns_disconnected-1001-1050:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_disconnected
       - START_SEED=1001
@@ -1069,7 +1069,7 @@ services:
   ca-dmg_sns_disconnected-1051-1100:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_disconnected
       - START_SEED=1051
@@ -1084,7 +1084,7 @@ services:
   ca-dmg_sns_disconnected-1101-1150:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_disconnected
       - START_SEED=1101
@@ -1099,7 +1099,7 @@ services:
   ca-dmg_sns_disconnected-1151-1200:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_disconnected
       - START_SEED=1151
@@ -1114,7 +1114,7 @@ services:
   ca-dmg_sns_disconnected-1201-1250:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_disconnected
       - START_SEED=1201
@@ -1129,7 +1129,7 @@ services:
   ca-dmg_sns_disconnected-1251-1300:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_disconnected
       - START_SEED=1251
@@ -1144,7 +1144,7 @@ services:
   ca-dmg_sns_disconnected-1301-1350:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_disconnected
       - START_SEED=1301
@@ -1159,7 +1159,7 @@ services:
   ca-dmg_sns_disconnected-1351-1400:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_disconnected
       - START_SEED=1351
@@ -1174,7 +1174,7 @@ services:
   ca-dmg_sns_disconnected-1401-1450:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_disconnected
       - START_SEED=1401
@@ -1189,7 +1189,7 @@ services:
   ca-dmg_sns_disconnected-1451-1500:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_disconnected
       - START_SEED=1451
@@ -1204,7 +1204,7 @@ services:
   ca-dmg_sns_disconnected-1501-1550:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_disconnected
       - START_SEED=1501
@@ -1219,7 +1219,7 @@ services:
   ca-dmg_sns_disconnected-1551-1600:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_disconnected
       - START_SEED=1551
@@ -1234,7 +1234,7 @@ services:
   ca-dmg_sns_disconnected-1601-1650:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_disconnected
       - START_SEED=1601
@@ -1249,7 +1249,7 @@ services:
   ca-dmg_sns_disconnected-1651-1700:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_disconnected
       - START_SEED=1651
@@ -1264,7 +1264,7 @@ services:
   ca-dmg_sns_disconnected-1701-1750:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_disconnected
       - START_SEED=1701
@@ -1279,7 +1279,7 @@ services:
   ca-dmg_sns_disconnected-1751-1800:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_disconnected
       - START_SEED=1751
@@ -1294,7 +1294,7 @@ services:
   ca-dmg_sns_disconnected-1801-1850:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_disconnected
       - START_SEED=1801
@@ -1309,7 +1309,7 @@ services:
   ca-dmg_sns_disconnected-1851-1900:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_disconnected
       - START_SEED=1851
@@ -1324,7 +1324,7 @@ services:
   ca-dmg_sns_disconnected-1901-1950:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_disconnected
       - START_SEED=1901
@@ -1339,7 +1339,7 @@ services:
   ca-dmg_sns_disconnected-1951-2000:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_disconnected
       - START_SEED=1951
@@ -1354,7 +1354,7 @@ services:
   ca-dmg_sns_disconnected-2001-2050:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_disconnected
       - START_SEED=2001
@@ -1369,7 +1369,7 @@ services:
   ca-dmg_sns_disconnected-2051-2100:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_disconnected
       - START_SEED=2051
@@ -1384,7 +1384,7 @@ services:
   ca-dmg_sns_disconnected-2101-2150:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_disconnected
       - START_SEED=2101
@@ -1399,7 +1399,7 @@ services:
   ca-dmg_sns_disconnected-2151-2200:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_disconnected
       - START_SEED=2151
@@ -1414,7 +1414,7 @@ services:
   ca-dmg_sns_disconnected-2201-2250:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_disconnected
       - START_SEED=2201
@@ -1429,7 +1429,7 @@ services:
   ca-dmg_sns_disconnected-2251-2300:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_disconnected
       - START_SEED=2251
@@ -1444,7 +1444,7 @@ services:
   ca-dmg_sns_disconnected-2301-2350:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_disconnected
       - START_SEED=2301
@@ -1459,7 +1459,7 @@ services:
   ca-dmg_sns_disconnected-2351-2400:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_disconnected
       - START_SEED=2351
@@ -1474,7 +1474,7 @@ services:
   ca-dmg_sns_disconnected-2401-2450:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_disconnected
       - START_SEED=2401
@@ -1489,7 +1489,7 @@ services:
   ca-dmg_sns_disconnected-2451-2500:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_disconnected
       - START_SEED=2451
@@ -1504,7 +1504,7 @@ services:
   ca-dmg_sns_fixed-1-50:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_fixed
       - START_SEED=1
@@ -1519,7 +1519,7 @@ services:
   ca-dmg_sns_fixed-51-100:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_fixed
       - START_SEED=51
@@ -1534,7 +1534,7 @@ services:
   ca-dmg_sns_fixed-101-150:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_fixed
       - START_SEED=101
@@ -1549,7 +1549,7 @@ services:
   ca-dmg_sns_fixed-151-200:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_fixed
       - START_SEED=151
@@ -1564,7 +1564,7 @@ services:
   ca-dmg_sns_fixed-201-250:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_fixed
       - START_SEED=201
@@ -1579,7 +1579,7 @@ services:
   ca-dmg_sns_fixed-251-300:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_fixed
       - START_SEED=251
@@ -1594,7 +1594,7 @@ services:
   ca-dmg_sns_fixed-301-350:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_fixed
       - START_SEED=301
@@ -1609,7 +1609,7 @@ services:
   ca-dmg_sns_fixed-351-400:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_fixed
       - START_SEED=351
@@ -1624,7 +1624,7 @@ services:
   ca-dmg_sns_fixed-401-450:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_fixed
       - START_SEED=401
@@ -1639,7 +1639,7 @@ services:
   ca-dmg_sns_fixed-451-500:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_fixed
       - START_SEED=451
@@ -1654,7 +1654,7 @@ services:
   ca-dmg_sns_fixed-501-550:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_fixed
       - START_SEED=501
@@ -1669,7 +1669,7 @@ services:
   ca-dmg_sns_fixed-551-600:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_fixed
       - START_SEED=551
@@ -1684,7 +1684,7 @@ services:
   ca-dmg_sns_fixed-601-650:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_fixed
       - START_SEED=601
@@ -1699,7 +1699,7 @@ services:
   ca-dmg_sns_fixed-651-700:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_fixed
       - START_SEED=651
@@ -1714,7 +1714,7 @@ services:
   ca-dmg_sns_fixed-701-750:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_fixed
       - START_SEED=701
@@ -1729,7 +1729,7 @@ services:
   ca-dmg_sns_fixed-751-800:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_fixed
       - START_SEED=751
@@ -1744,7 +1744,7 @@ services:
   ca-dmg_sns_fixed-801-850:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_fixed
       - START_SEED=801
@@ -1759,7 +1759,7 @@ services:
   ca-dmg_sns_fixed-851-900:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_fixed
       - START_SEED=851
@@ -1774,7 +1774,7 @@ services:
   ca-dmg_sns_fixed-901-950:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_fixed
       - START_SEED=901
@@ -1789,7 +1789,7 @@ services:
   ca-dmg_sns_fixed-951-1000:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_fixed
       - START_SEED=951
@@ -1804,7 +1804,7 @@ services:
   ca-dmg_sns_fixed-1001-1050:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_fixed
       - START_SEED=1001
@@ -1819,7 +1819,7 @@ services:
   ca-dmg_sns_fixed-1051-1100:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_fixed
       - START_SEED=1051
@@ -1834,7 +1834,7 @@ services:
   ca-dmg_sns_fixed-1101-1150:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_fixed
       - START_SEED=1101
@@ -1849,7 +1849,7 @@ services:
   ca-dmg_sns_fixed-1151-1200:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_fixed
       - START_SEED=1151
@@ -1864,7 +1864,7 @@ services:
   ca-dmg_sns_fixed-1201-1250:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_fixed
       - START_SEED=1201
@@ -1879,7 +1879,7 @@ services:
   ca-dmg_sns_fixed-1251-1300:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_fixed
       - START_SEED=1251
@@ -1894,7 +1894,7 @@ services:
   ca-dmg_sns_fixed-1301-1350:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_fixed
       - START_SEED=1301
@@ -1909,7 +1909,7 @@ services:
   ca-dmg_sns_fixed-1351-1400:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_fixed
       - START_SEED=1351
@@ -1924,7 +1924,7 @@ services:
   ca-dmg_sns_fixed-1401-1450:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_fixed
       - START_SEED=1401
@@ -1939,7 +1939,7 @@ services:
   ca-dmg_sns_fixed-1451-1500:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_fixed
       - START_SEED=1451
@@ -1954,7 +1954,7 @@ services:
   ca-dmg_sns_fixed-1501-1550:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_fixed
       - START_SEED=1501
@@ -1969,7 +1969,7 @@ services:
   ca-dmg_sns_fixed-1551-1600:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_fixed
       - START_SEED=1551
@@ -1984,7 +1984,7 @@ services:
   ca-dmg_sns_fixed-1601-1650:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_fixed
       - START_SEED=1601
@@ -1999,7 +1999,7 @@ services:
   ca-dmg_sns_fixed-1651-1700:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_fixed
       - START_SEED=1651
@@ -2014,7 +2014,7 @@ services:
   ca-dmg_sns_fixed-1701-1750:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_fixed
       - START_SEED=1701
@@ -2029,7 +2029,7 @@ services:
   ca-dmg_sns_fixed-1751-1800:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_fixed
       - START_SEED=1751
@@ -2044,7 +2044,7 @@ services:
   ca-dmg_sns_fixed-1801-1850:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_fixed
       - START_SEED=1801
@@ -2059,7 +2059,7 @@ services:
   ca-dmg_sns_fixed-1851-1900:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_fixed
       - START_SEED=1851
@@ -2074,7 +2074,7 @@ services:
   ca-dmg_sns_fixed-1901-1950:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_fixed
       - START_SEED=1901
@@ -2089,7 +2089,7 @@ services:
   ca-dmg_sns_fixed-1951-2000:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_fixed
       - START_SEED=1951
@@ -2104,7 +2104,7 @@ services:
   ca-dmg_sns_fixed-2001-2050:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_fixed
       - START_SEED=2001
@@ -2119,7 +2119,7 @@ services:
   ca-dmg_sns_fixed-2051-2100:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_fixed
       - START_SEED=2051
@@ -2134,7 +2134,7 @@ services:
   ca-dmg_sns_fixed-2101-2150:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_fixed
       - START_SEED=2101
@@ -2149,7 +2149,7 @@ services:
   ca-dmg_sns_fixed-2151-2200:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_fixed
       - START_SEED=2151
@@ -2164,7 +2164,7 @@ services:
   ca-dmg_sns_fixed-2201-2250:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_fixed
       - START_SEED=2201
@@ -2179,7 +2179,7 @@ services:
   ca-dmg_sns_fixed-2251-2300:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_fixed
       - START_SEED=2251
@@ -2194,7 +2194,7 @@ services:
   ca-dmg_sns_fixed-2301-2350:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_fixed
       - START_SEED=2301
@@ -2209,7 +2209,7 @@ services:
   ca-dmg_sns_fixed-2351-2400:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_fixed
       - START_SEED=2351
@@ -2224,7 +2224,7 @@ services:
   ca-dmg_sns_fixed-2401-2450:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_fixed
       - START_SEED=2401
@@ -2239,7 +2239,7 @@ services:
   ca-dmg_sns_fixed-2451-2500:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_fixed
       - START_SEED=2451
@@ -2254,7 +2254,7 @@ services:
   ca-dmg_sns_random-1-50:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_random
       - START_SEED=1
@@ -2269,7 +2269,7 @@ services:
   ca-dmg_sns_random-51-100:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_random
       - START_SEED=51
@@ -2284,7 +2284,7 @@ services:
   ca-dmg_sns_random-101-150:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_random
       - START_SEED=101
@@ -2299,7 +2299,7 @@ services:
   ca-dmg_sns_random-151-200:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_random
       - START_SEED=151
@@ -2314,7 +2314,7 @@ services:
   ca-dmg_sns_random-201-250:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_random
       - START_SEED=201
@@ -2329,7 +2329,7 @@ services:
   ca-dmg_sns_random-251-300:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_random
       - START_SEED=251
@@ -2344,7 +2344,7 @@ services:
   ca-dmg_sns_random-301-350:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_random
       - START_SEED=301
@@ -2359,7 +2359,7 @@ services:
   ca-dmg_sns_random-351-400:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_random
       - START_SEED=351
@@ -2374,7 +2374,7 @@ services:
   ca-dmg_sns_random-401-450:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_random
       - START_SEED=401
@@ -2389,7 +2389,7 @@ services:
   ca-dmg_sns_random-451-500:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_random
       - START_SEED=451
@@ -2404,7 +2404,7 @@ services:
   ca-dmg_sns_random-501-550:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_random
       - START_SEED=501
@@ -2419,7 +2419,7 @@ services:
   ca-dmg_sns_random-551-600:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_random
       - START_SEED=551
@@ -2434,7 +2434,7 @@ services:
   ca-dmg_sns_random-601-650:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_random
       - START_SEED=601
@@ -2449,7 +2449,7 @@ services:
   ca-dmg_sns_random-651-700:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_random
       - START_SEED=651
@@ -2464,7 +2464,7 @@ services:
   ca-dmg_sns_random-701-750:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_random
       - START_SEED=701
@@ -2479,7 +2479,7 @@ services:
   ca-dmg_sns_random-751-800:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_random
       - START_SEED=751
@@ -2494,7 +2494,7 @@ services:
   ca-dmg_sns_random-801-850:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_random
       - START_SEED=801
@@ -2509,7 +2509,7 @@ services:
   ca-dmg_sns_random-851-900:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_random
       - START_SEED=851
@@ -2524,7 +2524,7 @@ services:
   ca-dmg_sns_random-901-950:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_random
       - START_SEED=901
@@ -2539,7 +2539,7 @@ services:
   ca-dmg_sns_random-951-1000:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_random
       - START_SEED=951
@@ -2554,7 +2554,7 @@ services:
   ca-dmg_sns_random-1001-1050:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_random
       - START_SEED=1001
@@ -2569,7 +2569,7 @@ services:
   ca-dmg_sns_random-1051-1100:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_random
       - START_SEED=1051
@@ -2584,7 +2584,7 @@ services:
   ca-dmg_sns_random-1101-1150:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_random
       - START_SEED=1101
@@ -2599,7 +2599,7 @@ services:
   ca-dmg_sns_random-1151-1200:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_random
       - START_SEED=1151
@@ -2614,7 +2614,7 @@ services:
   ca-dmg_sns_random-1201-1250:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_random
       - START_SEED=1201
@@ -2629,7 +2629,7 @@ services:
   ca-dmg_sns_random-1251-1300:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_random
       - START_SEED=1251
@@ -2644,7 +2644,7 @@ services:
   ca-dmg_sns_random-1301-1350:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_random
       - START_SEED=1301
@@ -2659,7 +2659,7 @@ services:
   ca-dmg_sns_random-1351-1400:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_random
       - START_SEED=1351
@@ -2674,7 +2674,7 @@ services:
   ca-dmg_sns_random-1401-1450:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_random
       - START_SEED=1401
@@ -2689,7 +2689,7 @@ services:
   ca-dmg_sns_random-1451-1500:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_random
       - START_SEED=1451
@@ -2704,7 +2704,7 @@ services:
   ca-dmg_sns_random-1501-1550:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_random
       - START_SEED=1501
@@ -2719,7 +2719,7 @@ services:
   ca-dmg_sns_random-1551-1600:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_random
       - START_SEED=1551
@@ -2734,7 +2734,7 @@ services:
   ca-dmg_sns_random-1601-1650:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_random
       - START_SEED=1601
@@ -2749,7 +2749,7 @@ services:
   ca-dmg_sns_random-1651-1700:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_random
       - START_SEED=1651
@@ -2764,7 +2764,7 @@ services:
   ca-dmg_sns_random-1701-1750:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_random
       - START_SEED=1701
@@ -2779,7 +2779,7 @@ services:
   ca-dmg_sns_random-1751-1800:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_random
       - START_SEED=1751
@@ -2794,7 +2794,7 @@ services:
   ca-dmg_sns_random-1801-1850:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_random
       - START_SEED=1801
@@ -2809,7 +2809,7 @@ services:
   ca-dmg_sns_random-1851-1900:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_random
       - START_SEED=1851
@@ -2824,7 +2824,7 @@ services:
   ca-dmg_sns_random-1901-1950:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_random
       - START_SEED=1901
@@ -2839,7 +2839,7 @@ services:
   ca-dmg_sns_random-1951-2000:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_random
       - START_SEED=1951
@@ -2854,7 +2854,7 @@ services:
   ca-dmg_sns_random-2001-2050:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_random
       - START_SEED=2001
@@ -2869,7 +2869,7 @@ services:
   ca-dmg_sns_random-2051-2100:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_random
       - START_SEED=2051
@@ -2884,7 +2884,7 @@ services:
   ca-dmg_sns_random-2101-2150:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_random
       - START_SEED=2101
@@ -2899,7 +2899,7 @@ services:
   ca-dmg_sns_random-2151-2200:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_random
       - START_SEED=2151
@@ -2914,7 +2914,7 @@ services:
   ca-dmg_sns_random-2201-2250:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_random
       - START_SEED=2201
@@ -2929,7 +2929,7 @@ services:
   ca-dmg_sns_random-2251-2300:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_random
       - START_SEED=2251
@@ -2944,7 +2944,7 @@ services:
   ca-dmg_sns_random-2301-2350:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_random
       - START_SEED=2301
@@ -2959,7 +2959,7 @@ services:
   ca-dmg_sns_random-2351-2400:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_random
       - START_SEED=2351
@@ -2974,7 +2974,7 @@ services:
   ca-dmg_sns_random-2401-2450:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_random
       - START_SEED=2401
@@ -2989,7 +2989,7 @@ services:
   ca-dmg_sns_random-2451-2500:
     image: quay.io/p-baldini/2025-egd:1.0.3
     environment:
-      - WORK_DIR=/home/persistent/2025-egd-1.0.3
+      - WORK_DIR=/home/persistent/2025-egd
       - BIAS=0.79
       - DAMAGE_MODULE=dmg_sns_random
       - START_SEED=2451
