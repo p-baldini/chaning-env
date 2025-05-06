@@ -28,7 +28,7 @@ do
         fi
         # create an instance of the controller for the specific experiment
         cp main.lua main_instance.lua
-        cp phototaxis.argos phototaxis_instance.argos
+        cp phototaxis-informed.argos phototaxis_instance.argos
 
         # set up the controller with the experiment parameters
         sed -i "s|££ DAMAGE_MODULE ££|\"$DAMAGE_MODULE\"|" "main_instance.lua"

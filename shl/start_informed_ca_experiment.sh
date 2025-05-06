@@ -28,7 +28,7 @@ do
         fi
         # create an instance of the controller for the specific experiment
         cp main.lua main_instance.lua
-        cp collision-avoidance.argos collision-avoidance_instance.argos
+        cp collision-avoidance-informed.argos collision-avoidance_instance.argos
 
         # set up the controller with the experiment parameters
         sed -i "s|££ DAMAGE_MODULE ££|\"$DAMAGE_MODULE\"|" "main_instance.lua"
