@@ -44,7 +44,7 @@ do
         sed -i "s|££ SENSORS_TYPE ££|proximity|" "main_instance.lua"
         sed -i "s|random_seed=\"1\"|random_seed=\"$SEED\"|" "collision-avoidance_instance.argos"
 
-        P=$(cat "$INPUT_PATH/f$N_FAULTS-s$SEED.txt" | grep position | sed -n '480 p' | awk '{print $4}')
+        P=$(cat "$INPUT_PATH/f$N_FAULTS-s$SEED.txt" | grep position | sed -n '481 p' | awk '{print $4}') # 481 instead of 480 because the script prints also the initial position
         sed -i "s|position=\"0,0,0\"|position=\"$P\"|" "collision-avoidance_instance.argos"
 
         # launch the argos3 experiment and save the results to a file
