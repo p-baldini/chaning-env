@@ -44,7 +44,7 @@ do
         sed -i "s|££ SENSORS_TYPE ££|light|" "main_instance.lua"
         sed -i "s|random_seed=\"1\"|random_seed=\"$SEED\"|" "phototaxis_instance.argos"
 
-        P=$(cat "$INPUT_PATH/f$N_FAULTS-s$SEED.txt" | grep position | sed -n '481 p' | awk '{print $4}') # 481 instead of 480 because the script prints also the initial position
+        P=$(cat "$INPUT_PATH/f$N_FAULTS-s$SEED.txt" | grep position | tail -n 481 | head -n 1 | awk '{print $4}')
         sed -i "s|position=\"0,0,0\"|position=\"$P\"|" "phototaxis_instance.argos"
 
         # launch the argos3 experiment and save the results to a file
