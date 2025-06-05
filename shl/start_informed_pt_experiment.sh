@@ -8,7 +8,7 @@
 [ -z "$WORK_DIR" ] &&      echo "[ERROR] Missing parameter WORK_DIR" &&      exit 5
 
 # create an output directory for the experiment results
-OUTPUT_PATH="$WORK_DIR/v1.0.3_pt-informed/$DAMAGE_MODULE"
+OUTPUT_PATH="$WORK_DIR/v1.0.4_pt-informed/$DAMAGE_MODULE"
 mkdir -p $OUTPUT_PATH
 
 for SEED in $(seq $START_SEED $END_SEED)

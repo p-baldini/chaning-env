@@ -8,10 +8,10 @@
 [ -z "$WORK_DIR" ] &&      echo "[ERROR] Missing parameter WORK_DIR" &&      exit 5
 
 # create an input directory from which to read the starting position of the robots
-INPUT_PATH="$WORK_DIR/v1.0.3_ca-informed/$DAMAGE_MODULE"
+INPUT_PATH="$WORK_DIR/v1.0.4_ca-informed/$DAMAGE_MODULE"
 
 # create an output directory for the experiment results
-OUTPUT_PATH="$WORK_DIR/v1.0.3_ca-clueless/$DAMAGE_MODULE"
+OUTPUT_PATH="$WORK_DIR/v1.0.4_ca-clueless/$DAMAGE_MODULE"
 mkdir -p $OUTPUT_PATH
 
 for SEED in $(seq $START_SEED $END_SEED)
