@@ -7,9 +7,9 @@ local start_epoch_distance = nil
 
 -- Output the Euclidean distance from the light.
 function distance_from_light()
-    x = robot.positioning.position.x
-    y = robot.positioning.position.y
-    return math.sqrt(x^2 + y^2)
+    dx = robot.positioning.position.x - 450
+    dy = robot.positioning.position.y - 450
+    return math.sqrt(dx^2 + dy^2)
 end
 
 
