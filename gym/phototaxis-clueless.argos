@@ -79,15 +79,5 @@
     <!-- * Visualization * -->
     <!-- ****************** -->
     <visualization/>
-    <!-- <visualization>
-        <qt-opengl lua_editor="false">
-        <camera>
-            <placements>
-            <placement index="0" position="0,0,450" look_at="0,0,0" lens_focal_length="20" />
-            <placement index="1" position="-4.56528,-0.145,7.24661" look_at="-4.08112,-0.145,6.37163" lens_focal_length="20" />
-            </placements>
-        </camera>
-        </qt-opengl>
-    </visualization> -->
 
 </argos-configuration>
