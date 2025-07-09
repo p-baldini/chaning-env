@@ -1,11 +1,8 @@
 using Base.Iterators
 
-const IMAGE_NAME="quay.io/p-baldini/2025-egd:1.0.4"
-const WORK_DIR="/home/persistent/2025-egd-1.0.4"
-const EXP="ca-informed"
-# const EXP="ca-clueless"
-# const EXP="pt-informed"
-# const EXP="pt-clueless"
+const IMAGE_NAME="quay.io/p-baldini/2025-ece:1.0.0"
+const WORK_DIR="/home/persistent/2025-ece/1.0.0"
+const EXP="cawh"
 
 file = open("compose-$EXP.yaml", "w")
 
@@ -17,25 +14,17 @@ services:
 """
 write(file, header)
 
-DAMAGE_TYPES = [
-    "dmg_act_slowed",
-    "dmg_sns_disconnected",
-    "dmg_sns_fixed",
-    "dmg_sns_random"
-]
 SEED_RANGES = zip(
-    (0:50 |> collect) .* 50 .+ 1,
-    (1:50 |> collect) .* 50
+    (0:50 |> collect) .* 10 .+ 1,
+    (1:50 |> collect) .* 10
 )
 
-template(DAMAGE_TYPE, S_SEED, E_SEED) = 
+template(S_SEED, E_SEED) = 
 """
-  $EXP-$DAMAGE_TYPE-$S_SEED-$E_SEED:
+  $EXP-$S_SEED-$E_SEED:
     image: $IMAGE_NAME
     environment:
       - WORK_DIR=$WORK_DIR
-      - BIAS=0.79
-      - DAMAGE_MODULE=$DAMAGE_TYPE
       - START_SEED=$S_SEED
       - END_SEED=$E_SEED
     volumes:
@@ -47,10 +36,8 @@ template(DAMAGE_TYPE, S_SEED, E_SEED) =
     entrypoint: "/home/start_$(EXP)_experiment.sh"
 """
 
-for dt in DAMAGE_TYPES
-    for (ss, es) in SEED_RANGES
-        write(file, template(dt, ss, es))
-    end
+for (ss, es) in SEED_RANGES
+    write(file, template(ss, es))
 end
 
 volumes =

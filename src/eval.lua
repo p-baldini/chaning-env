@@ -5,16 +5,6 @@ local performance = nil
 
 
 
--- Round to 1 values greater or similar to 1.
-function sigma(x)
-    if x > 0.9 then
-        x = 1
-    end
-    return x
-end
-
-
-
 -- Initialize a new evaluation period
 function evaluator.new_epoch(robot)
     performance = 0
@@ -28,30 +18,28 @@ end
 
 
 -- Evaluates the performance of the controller as the proximity from obstacles,
--- direction and speed.
+-- direction, speed, and temperature.
 function evaluator.update(robot)
+    -- Find the maximum proximity value in [0, 1]
     max_proximity = 0
-    for i = 1, 24 do
-        value = sigma(robot.proximity[i].value)
+
+    for i = 1,24,3 do
+        local value = robot.proximity[i].value
         if max_proximity < value then
             max_proximity = value
         end
     end
 
-    bvl = 0
-    bvr = 0
-    if robot.wheels.velocity_left > 0 then
-        bvl = 1
-    end
-    if robot.wheels.velocity_right > 0 then
-        bvr = 1
-    end
+    -- Get the wheels speed in [0, 1]
+    bvl = robot.wheels.velocity_left / 10
+    bvr = robot.wheels.velocity_right / 10
 
     -- The robot performance considers the max proximity, speed and direction
-    -- of the robot.
-    ef = (1 - math.sqrt(math.abs(bvl - bvr)))
+    -- of the robot, and on the perceived temperature
+    ef = 1 - math.sqrt(math.abs(bvl - bvr))
     ef = ef * (bvl + bvr) / 2
     ef = ef * (1 - max_proximity)
+    ef = ef * 1 / (1 + math.exp(-10 * robot.temperature))
 
     -- Accumulate the step-performance to the epoch one
     performance = performance + ef
