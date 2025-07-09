@@ -23,7 +23,7 @@ function ann.change(net, p)
     for i = 1,#net do
         for j = 1,#net[i] do
             if math.random() <= p then
-                net[i][j] = math.random(-100, 100) / 100.0
+                net[i][j] = math.random(-5, 5) / 100.0
                 net[i][j] = math.max(-1, net[i][j])
                 net[i][j] = math.min( 1, net[i][j])
             end
@@ -67,7 +67,7 @@ function ann.create(inc, outc)
         res[i] = {}
 
         for j = 1,inc do
-            res[i][j] = math.random(-100, 100) / 100.0
+            res[i][j] = math.random(0, 0) / 100.0
         end
     end
 
@@ -75,7 +75,7 @@ function ann.create(inc, outc)
 end
 
 
--- Compute the output according to the input, both in [0, 1]
+-- Compute the output according to the input
 function ann.compute(net, is)
     local outputs = {}
 
@@ -87,11 +87,8 @@ function ann.compute(net, is)
             sum = is[j] * ws[j]
         end
 
-        -- Sigmoid activation function
-        outputs[i] = 1 / (1 + math.exp(-sum))
-
-        -- Put output in [0, 1]
-        outputs[i] = (outputs[i] + 1) / 2
+        -- Sigmoid activation function [-1, 1]
+        outputs[i] = 1 / (1 + math.exp(-4 * sum))
     end
 
     return outputs

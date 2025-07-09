@@ -21,8 +21,8 @@ do
 
     # set up the controller with the experiment parameters
     sed -i "s|££ SEED ££|$SEED|" "main_instance.lua"
-    sed -i "s|££ EPOCH_STEPS ££|750|" "main_instance.lua"
-    sed -i "s|££ PHASE_1_EPOCHS ££|960|" "main_instance.lua"   # length experiment (144000s) * steps per second (10) / steps per epochs (1500) / phase count (2)
+    sed -i "s|££ EPOCH_STEPS ££|300|" "main_instance.lua"
+    sed -i "s|££ PHASE_1_EPOCHS ££|1200|" "main_instance.lua"   # length experiment (72000s) * steps per second (10) / steps per epochs (300) / phase count (2)
     sed -i "s|££ SENSORS_TYPE ££|proximity|" "main_instance.lua"
     sed -i "s|random_seed=\"1\"|random_seed=\"$SEED\"|" "collision-avoidance-with-homeostasis_instance.argos"
 

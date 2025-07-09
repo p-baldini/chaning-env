@@ -21,17 +21,18 @@ FAULT_INSTANT = ££ PHASE_1_EPOCHS ££ * EPOCH_STEPS
 
 steps_count = 0
 
-temp_mult = -1
+season = 0
 
 curr_ann = {}
 best_ann = {}
 best_prf = 0
 
 
+-- Calculate the temperature perceived by the robot according to its position in the arena, in [0, 1]
 function update_temperature(robot)
-    local x = robot.positioning.position.x
-    local t = 1 / (1 + math.exp(temp_mult * 3 * x))
-    robot.temperature = t
+    local temp = (robot.positioning.position.x + 50) / 100
+
+    robot.temperature = math.abs(temp - season)
 end
 
 
@@ -39,8 +40,8 @@ end
 function init()
     ann.set_seed(SEED)
 
-    -- Create ANN with 9 inputs (8 proximity + 1 temperature + 4 ground + bias) and 2 outputs
-    curr_ann = ann.create(8 + 1 + 4 + 1, 2)
+    -- Create ANN with 9 inputs (8 light + 1 temperature + bias) and 2 outputs
+    curr_ann = ann.create(8 + 1 + 1, 2)
 
     -- Initialize the best mapping and state of the ann
     best_ann = ann.copy(curr_ann)
@@ -70,7 +71,7 @@ function step()
     -- At half experiment switch the season
     if steps_count == FAULT_INSTANT then
         print('\n# PHASE 2')
-        temp_mult = 1
+        season = 1
     end
 
     -- 
@@ -129,16 +130,12 @@ function step()
     update_temperature(robot)
 
     -- Set up the output and input vectors to pass to the damage function
-    outputs = {}
     inputs = {}
     for i = 0,7 do
-        inputs[i + 1] = robot.proximity[i * 3 + 1].value
+        inputs[i + 1] = robot.light[i * 3 + 1].value
     end
     inputs[9] = robot.temperature
-    for i = 1,4 do
-        inputs[9 + i] = robot.motor_ground[i].value
-    end
-    inputs[14] = 1
+    inputs[10] = 1
 
     -- Get the output of the ANN and set the motors accordingly
     outputs = ann.compute(curr_ann, inputs)

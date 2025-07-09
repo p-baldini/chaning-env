@@ -7,7 +7,7 @@
     <!-- ************************* -->
     <framework>
         <system threads="0" />
-        <experiment length="144000"
+        <experiment length="72000"
                     ticks_per_second="10"
                     random_seed="1"/>
     </framework>
@@ -21,8 +21,7 @@
                 <differential_steering implementation="default" noise_level="0.01"/>
             </actuators>
             <sensors>
-                <footbot_proximity implementation="default" show_rays="false" noise_level="0.01" />
-                <footbot_motor_ground implementation="rot_z_only" />
+                <footbot_light implementation="rot_z_only" show_rays="true" noise_level="0.01" />
                 <differential_steering implementation="default" noise_level="0.0"/>
                 <positioning implementation="default" noise_level="0.0" />
             </sensors>
@@ -33,30 +32,31 @@
     <!-- *********************** -->
     <!-- * Arena configuration * -->
     <!-- *********************** -->
-    <arena size="5, 5, 2" center="0, 0, 0.5" positional_grid_size="5, 5, 1">
-        <floor id="floor" source="image" path="floor.png" />
-
-        <box id="wall-12h" size="0.1, 5, 0.2" movable="false">
-            <body position="2.5, 0, 0" orientation="0, 0, 0" />
+    <arena size="100, 100, 2" center="0, 0, 0.5" positional_grid_size="5, 5, 1">
+        <box id="wall-12h" size="0.1, 100, 0.2" movable="false">
+            <body position="50, 0, 0" orientation="0, 0, 0" />
         </box>
-        <box id="wall-15h" size="0.1, 5, 0.2" movable="false">
-            <body position="0, -2.5, 0" orientation="-90, 0, 0" />
+        <box id="wall-15h" size="0.1, 100, 0.2" movable="false">
+            <body position="0, -50, 0" orientation="-90, 0, 0" />
         </box>
-        <box id="wall-18h" size="0.1, 5, 0.2" movable="false">
-            <body position="-2.5, 0, 0" orientation="180, 0, 0" />
+        <box id="wall-18h" size="0.1, 100, 0.2" movable="false">
+            <body position="-50, 0, 0" orientation="180, 0, 0" />
         </box>
-        <box id="wall-21h" size="0.1, 5, 0.2" movable="false">
-            <body position="0, 2.5, 0" orientation="90, 0, 0" />
+        <box id="wall-21h" size="0.1, 100, 0.2" movable="false">
+            <body position="0, 50, 0" orientation="90, 0, 0" />
         </box>
 
-        <box id="central-block" size="2, 2, 0.2" movable="false">
-            <body position="0, 0, 0" orientation="0, 0, 0" />
-        </box>
+        <light id="light" position="45,0,0.25" orientation="0,0,0" color="yellow" intensity="200" medium="leds"/>
 
-        <foot-bot id="fb">
-            <body position="1.5,0,0" orientation="0,0,0" />
-            <controller config="lua"/>
-        </foot-bot>
+        <distribute>
+            <position method="uniform" min="-50,-50,0" max="50,50,0" />
+            <orientation method="uniform" min="0,0,0" max="360,0,0" />
+            <entity quantity="1" max_trials="100">
+                <foot-bot id="fb">
+                <controller config="lua" />
+                </foot-bot>
+            </entity>
+        </distribute>
     </arena>
 
     <!-- ******************* -->
@@ -72,20 +72,5 @@
     <media>
         <led id="leds" />
     </media>
-
-    <!-- ****************** -->
-    <!-- * Visualization * -->
-    <!-- ****************** -->
-    <!-- <visualization/> -->
-    <!-- <visualization>
-        <qt-opengl lua_editor="false">
-        <camera>
-            <placements>
-            <placement index="0" position="0,0,5" look_at="0,0,0" lens_focal_length="20" />
-            <placement index="1" position="-4.56528,-0.145,7.24661" look_at="-4.08112,-0.145,6.37163" lens_focal_length="20" />
-            </placements>
-        </camera>
-        </qt-opengl>
-    </visualization> -->
 
 </argos-configuration>
