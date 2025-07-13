@@ -1,13 +1,8 @@
 local evaluator = {}
 
--- The performance accumulator of the current epoch
-local performance = nil
-
-
 
 -- Initialize a new evaluation period
 function evaluator.new_epoch(robot)
-    performance = 0
     print('^ position [x,y,z]: ' ..
         robot.positioning.position.x .. ',' ..
         robot.positioning.position.y .. ',' ..
