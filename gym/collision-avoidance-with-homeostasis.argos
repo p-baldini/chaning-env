@@ -57,7 +57,7 @@
         <light id="light9" position="48, 48,0.25" orientation="0,0,0" color="yellow" intensity="200" medium="leds"/>
 
         <distribute>
-            <position method="uniform" min="48,-50,0" max="50,50,0" />
+            <position method="uniform" min="0,0,0" max="0,0,0" />
             <orientation method="uniform" min="0,0,0" max="360,0,0" />
             <entity quantity="1" max_trials="100">
                 <foot-bot id="fb">
