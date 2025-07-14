@@ -40,8 +40,8 @@ end
 function init()
     enn.set_seed(SEED)
 
-    -- Create ANN with 9 inputs (4 light + 1 temperature) and 2 outputs
-    curr_ann = enn.create(4 + 1, 10, 2)
+    -- Create ANN with 3 inputs (2 light + 1 temperature) and 2 outputs
+    curr_ann = enn.create(2 + 1, 6, 2)
 
     -- Initialize the best mapping and state of the ann
     best_ann = enn.copy(curr_ann)
@@ -133,11 +133,11 @@ function step()
     update_temperature(robot)
 
     -- Set up the output and input vectors to pass to the damage function
-    inputs = {}
-    for i = 1, 4 do
-        inputs[i] = robot.light[i * 6].value
-    end
-    inputs[5] = robot.temperature
+    inputs = {
+        robot.light[1].value,
+        robot.light[12].value,
+        robot.temperature
+    }
 
     -- Get the output of the ANN and set the motors accordingly
     curr_ann, outputs = enn.compute(curr_ann, inputs)
@@ -145,11 +145,9 @@ function step()
 end
 
 
-
 function reset()
     -- Nothing
 end
-
 
 
 function destroy()
