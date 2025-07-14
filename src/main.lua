@@ -6,7 +6,7 @@
 -- @param[in] PHASE_1_EPOCHS the number of epochs before a fault occurs
 -- 
 -- @author Paolo Baldini
-local ann = require "ann"
+local enn = require "enn"
 local evaluator = require "eval"
 
 -- Seed of the experiment for reproducibility
@@ -17,11 +17,11 @@ MUTATION_PROBABILITY = 0.1
 MAXIMUM_SPEED = 10
 
 EPOCH_STEPS = ££ EPOCH_STEPS ££
-FAULT_INSTANT = ££ PHASE_1_EPOCHS ££ * EPOCH_STEPS
+PHASE_THRESHOLD = ££ PHASE_1_EPOCHS ££ * EPOCH_STEPS
 
 steps_count = 0
 
-season = 0
+season = 1
 
 curr_ann = {}
 best_ann = {}
@@ -38,13 +38,13 @@ end
 
 -- Set up the experiment.
 function init()
-    ann.set_seed(SEED)
+    enn.set_seed(SEED)
 
-    -- Create ANN with 9 inputs (8 light + 1 temperature + bias) and 2 outputs
-    curr_ann = ann.create(8 + 1 + 1, 2)
+    -- Create ANN with 9 inputs (4 light + 1 temperature) and 2 outputs
+    curr_ann = enn.create(4 + 1, 10, 2)
 
     -- Initialize the best mapping and state of the ann
-    best_ann = ann.copy(curr_ann)
+    best_ann = enn.copy(curr_ann)
     best_prf = 0
 
     steps_count = 0
@@ -69,9 +69,9 @@ function step()
     end
 
     -- At half experiment switch the season
-    if steps_count == FAULT_INSTANT then
+    if steps_count == PHASE_THRESHOLD then
         print('\n# PHASE 2')
-        season = 1
+        season = 0
     end
 
     -- 
@@ -91,7 +91,7 @@ function step()
         prf = evaluator.performance(robot)
 
         io.write("- current-ann: \t\t")
-        ann.print(curr_ann)
+        enn.print(curr_ann)
         print('* performance: \t\t' .. prf)
 
         -- Every odd epoch we starts a re-evaluation of the best configuration;
@@ -106,17 +106,20 @@ function step()
         then
             best_prf = 0.5 * best_prf + 0.5 * prf
         elseif prf > best_prf then
-            best_ann = ann.copy(curr_ann)
+            best_ann = enn.copy(curr_ann)
             best_prf = prf
         end
 
         -- Set the best coupling as the starting one
-        curr_ann = ann.copy(curr_ann)
+        curr_ann = enn.copy(best_ann)
 
         -- If we are starting an exploratory epoch, modify the best coupling
         if exploratory_epoch then
-            ann.change(curr_ann, MUTATION_PROBABILITY)
+            enn.change(curr_ann, MUTATION_PROBABILITY, best_prf)
         end
+
+        -- Update the temperature sensor
+        update_temperature(robot)
 
         -- Start a new evaluation epoch
         evaluator.new_epoch(robot)
@@ -131,14 +134,13 @@ function step()
 
     -- Set up the output and input vectors to pass to the damage function
     inputs = {}
-    for i = 0,7 do
-        inputs[i + 1] = robot.light[i * 3 + 1].value
+    for i = 1, 4 do
+        inputs[i] = robot.light[i * 6].value
     end
-    inputs[9] = robot.temperature
-    inputs[10] = 1
+    inputs[5] = robot.temperature
 
     -- Get the output of the ANN and set the motors accordingly
-    outputs = ann.compute(curr_ann, inputs)
+    curr_ann, outputs = enn.compute(curr_ann, inputs)
     robot.wheels.set_velocity(outputs[1] * 10, outputs[2] * 10)
 end
 
