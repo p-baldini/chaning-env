@@ -7,7 +7,7 @@
     <!-- ************************* -->
     <framework>
         <system threads="0" />
-        <experiment length="72000"
+        <experiment length="28800"
                     ticks_per_second="10"
                     random_seed="1"/>
     </framework>
@@ -46,10 +46,18 @@
             <body position="0, 50, 0" orientation="90, 0, 0" />
         </box>
 
-        <light id="light" position="45,0,0.25" orientation="0,0,0" color="yellow" intensity="200" medium="leds"/>
+        <light id="light1" position="48,-48,0.25" orientation="0,0,0" color="yellow" intensity="200" medium="leds"/>
+        <light id="light2" position="48,-36,0.25" orientation="0,0,0" color="yellow" intensity="200" medium="leds"/>
+        <light id="light3" position="48,-24,0.25" orientation="0,0,0" color="yellow" intensity="200" medium="leds"/>
+        <light id="light4" position="48,-12,0.25" orientation="0,0,0" color="yellow" intensity="200" medium="leds"/>
+        <light id="light5" position="48,-0, 0.25" orientation="0,0,0" color="yellow" intensity="200" medium="leds"/>
+        <light id="light6" position="48, 12,0.25" orientation="0,0,0" color="yellow" intensity="200" medium="leds"/>
+        <light id="light7" position="48, 24,0.25" orientation="0,0,0" color="yellow" intensity="200" medium="leds"/>
+        <light id="light8" position="48, 36,0.25" orientation="0,0,0" color="yellow" intensity="200" medium="leds"/>
+        <light id="light9" position="48, 48,0.25" orientation="0,0,0" color="yellow" intensity="200" medium="leds"/>
 
         <distribute>
-            <position method="uniform" min="-50,-50,0" max="50,50,0" />
+            <position method="uniform" min="48,-50,0" max="50,50,0" />
             <orientation method="uniform" min="0,0,0" max="360,0,0" />
             <entity quantity="1" max_trials="100">
                 <foot-bot id="fb">
