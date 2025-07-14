@@ -2,6 +2,7 @@
 -- Elman Recurrent Neural Network.
 --
 require "matrix"
+require "mymath"
 
 local enn = {}
 
@@ -10,14 +11,7 @@ local seed = os.time()
 math.randomseed(seed)
 
 
--- Sigmoid activation function: compute the
--- sigmoid value of an input value x.
-function sigmoid(x)
-    return 1 / (1 + math.exp(-x))
-end
-
-
--- Set seed used to create and update the RNN Reservoir
+-- Set seed used to create and update the RNN
 function enn.set_seed(s)
     seed = s
     math.randomseed(seed)
@@ -30,31 +24,32 @@ function enn.get_seed()
 end
 
 
--- Create RNN based on the Elman Network.
--- All the weights are in [0, 1].
+-- Create RNN based on the Elman Network. All the weights
+-- are in [-1, 1], except the output one, that will be
+-- adapted runtime.
 -- The starting context nodes value is 1.
 function enn.create(incount, hidcount, outcount)
     -- Initialize context units state with 1s
     local cs = matrix:new(hidcount, 1, 1)
 
     -- Create the weights matrix from input to hidden nodes
-    -- and randomly set the weights in [0, 1]; consider
+    -- and randomly set the weights in [-1, 1]; consider
     -- also the bias weights
     local l1 = matrix:new(hidcount, incount + 1, 0)
-    local l1 = matrix.random(l1, 0, 100)
+    local l1 = matrix.random(l1, -100, 100)
     local l1 = matrix.divnum(l1, 100)
 
     -- Create the weights matrix from context to hidden
-    -- nodes and randomly set the weights in [0, 1]
+    -- nodes and randomly set the weights in [-1, 1]
     local lc = matrix:new(hidcount, 1, 0)
-    local lc = matrix.random(lc, 0, 100)
+    local lc = matrix.random(lc, -100, 100)
     local lc = matrix.divnum(lc, 100)
 
     -- Create the weights matrix from hidden to output
-    -- nodes and randomly set the weights in [0, 1];
-    -- consider also the bias weights
+    -- nodes and set the weights to zero; consider also the
+    -- bias weights
     local l2 = matrix:new(outcount, hidcount + 1, 0)
-    local l2 = matrix.random(l2, 0, 100)
+    local l2 = matrix.random(l2, -0, 0)
     local l2 = matrix.divnum(l2, 100)
 
     return { l1 = l1, lc = lc, cs = cs, l2 = l2 }
@@ -63,8 +58,8 @@ end
 
 -- Compute the output according to the input
 function enn.compute(enn, inputs)
-    -- Check that the number of inputs match with
-    -- the number of input nodes, otherwise exit
+    -- Check that the number of inputs match with the
+    -- number of input nodes, otherwise exit
     if #inputs + 1 ~= #enn.l1[1] then
         os.exit(2)
     end
@@ -104,17 +99,40 @@ function enn.compute(enn, inputs)
 end
 
 
--- Random change the weights of the RNN, but keep them in -1, 1
+-- Random change the weights of the RNN, but keep them in
+-- [-1, 1]
 function enn.change(enn, p, perf)
-    -- Multiplier to increase intensity of perturbation with decrease of performance
+    -- Multiplier to increase intensity of perturbation
+    -- with decrease of performance
     mult = math.exp(-5 * perf)
+    dev = 0.75
+
+    for i = 1, #enn.l1 do
+        for j = 1, #enn.l1[1] do
+            if math.random() <= p then
+                enn.l1[i][j] = enn.l1[i][j] + mult * rand(-dev, dev)
+                enn.l1[i][j] = math.max(-1, enn.l1[i][j])
+                enn.l1[i][j] = math.min( 1, enn.l1[i][j])
+            end
+        end
+    end
+
+    for i = 1, #enn.lc do
+        for j = 1, #enn.lc[1] do
+            if math.random() <= p then
+                enn.lc[i][j] = enn.lc[i][j] + mult * rand(-dev, dev)
+                enn.lc[i][j] = math.max(-1, enn.lc[i][j])
+                enn.lc[i][j] = math.min( 1, enn.lc[i][j])
+            end
+        end
+    end
 
     for i = 1, #enn.l2 do
         for j = 1, #enn.l2[1] do
             if math.random() <= p then
-                enn.l2[i][j] = enn.l2[i][j] + mult * math.random(-100, 100) / 100.0
-                enn.l2[i][j] = math.max(0, enn.l2[i][j])
-                enn.l2[i][j] = math.min(1, enn.l2[i][j])
+                enn.l2[i][j] = enn.l2[i][j] + mult * rand(-dev, dev)
+                enn.l2[i][j] = math.max(-1, enn.l2[i][j])
+                enn.l2[i][j] = math.min( 1, enn.l2[i][j])
             end
         end
     end
