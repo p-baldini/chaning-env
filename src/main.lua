@@ -21,7 +21,7 @@ PHASE_THRESHOLD = ££ PHASE_1_EPOCHS ££ * EPOCH_STEPS
 
 steps_count = 0
 
-season = 1
+season = ££ SEASON ££
 
 curr_ann = {}
 best_ann = {}
@@ -71,7 +71,7 @@ function step()
     -- At half experiment switch the season
     if steps_count == PHASE_THRESHOLD then
         print('\n# PHASE 2')
-        season = 0
+        season = 1 - season
     end
 
     -- 
@@ -141,7 +141,10 @@ function step()
 
     -- Get the output of the ANN and set the motors accordingly
     curr_ann, outputs = enn.compute(curr_ann, inputs)
-    robot.wheels.set_velocity(outputs[1] * 10, outputs[2] * 10)
+    robot.wheels.set_velocity(
+        outputs[1] * MAXIMUM_SPEED,
+        outputs[2] * MAXIMUM_SPEED
+    )
 end
 
 
