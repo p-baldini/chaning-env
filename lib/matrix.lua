@@ -39,6 +39,7 @@
 	Developers:
 		Michael Lutz (chillcode)
 		David Manura http://lua-users.org/wiki/DavidManura
+		Paolo Baldini (matrix.hadamard)
 		
 	MODIFIED TO SUIT THE MTA SCRIPTING SYSTEM
 ]]--
@@ -150,6 +151,19 @@ function matrix.sub( m1, m2 )
 		mtx[i] = {}
 		for j = 1,#m1[1] do
 			mtx[i][j] = m1[i][j] - m2[i][j]
+		end
+	end
+	return setmetatable( mtx, matrix_meta )
+end
+
+--// matrix.hadamard( m1, m2 )
+-- Multiply 2 matrices element-wise; m1 and m2 must be of the same size
+function matrix.hadamard( m1, m2 )
+	local mtx = {}
+	for i = 1,#m1 do
+		mtx[i] = {}
+		for j = 1,#m1[1] do
+			mtx[i][j] = m1[i][j] * m2[i][j]
 		end
 	end
 	return setmetatable( mtx, matrix_meta )
