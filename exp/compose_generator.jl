@@ -1,7 +1,7 @@
 using Base.Iterators
 
-const IMAGE_NAME="quay.io/p-baldini/2025-ece:1.0.0"
-const WORK_DIR="/home/persistent/2025-ece/1.0.0"
+const IMAGE_NAME="quay.io/p-baldini/2025-ece:1.1.0"
+const WORK_DIR="/home/persistent/2025-ece/1.1.0"
 const EXP="cawh"
 
 file = open("compose-$EXP.yaml", "w")
