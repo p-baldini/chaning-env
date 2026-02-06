@@ -74,7 +74,7 @@ function enn.compute(enn, inputs)
     -- context nodes
     local hs = matrix.add(
         matrix.mul(enn.l1, is),
-        matrix.mul(enn.lc, enn.cs)
+        matrix.hadamard(enn.lc, enn.cs)
     )
 
     -- Apply the activation function on the hidden nodes
@@ -83,7 +83,7 @@ function enn.compute(enn, inputs)
     end
 
     -- Copy the value of the hidden nodes to the context
-    enn.cs = hs
+    enn.cs = matrix.copy(hs)
 
     -- Compute the value of the output nodes according to
     -- the hidden nodes and bias
