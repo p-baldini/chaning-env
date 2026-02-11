@@ -30,6 +30,11 @@ best_prf = 0
 
 -- Calculate the temperature perceived by the robot according to its position in the arena, in [0, 1]
 function update_temperature(robot)
+    if math.abs(robot.positioning.position.x) > 50 or math.abs(robot.positioning.position.y) > 50 then
+        io.write("Experiment " .. SEED .. " failed: robot out of the arena")
+        os.exit(-1)
+    end
+
     local temp = (robot.positioning.position.x + 50) / 100
 
     robot.temperature = math.abs(temp - season)
@@ -117,9 +122,6 @@ function step()
         if exploratory_epoch then
             enn.change(curr_ann, MUTATION_PROBABILITY, best_prf)
         end
-
-        -- Update the temperature sensor
-        update_temperature(robot)
 
         -- Start a new evaluation epoch
         evaluator.new_epoch(robot)
