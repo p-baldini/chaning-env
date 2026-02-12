@@ -36,13 +36,13 @@ function enn.create(incount, hidcount, outcount)
     -- and randomly set the weights in [-1, 1]; consider
     -- also the bias weights
     local l1 = matrix:new(hidcount, incount + 1, 0)
-    local l1 = matrix.random(l1, -100, 100)
+    local l1 = matrix.random(l1, -200, 200)
     local l1 = matrix.divnum(l1, 100)
 
     -- Create the weights matrix from context to hidden
     -- nodes and randomly set the weights in [-1, 1]
     local lc = matrix:new(hidcount, 1, 0)
-    local lc = matrix.random(lc, -100, 100)
+    local lc = matrix.random(lc, -200, 200)
     local lc = matrix.divnum(lc, 100)
 
     -- Create the weights matrix from hidden to output
@@ -76,7 +76,7 @@ function enn.compute(enn, inputs)
     )
 
     -- Apply the hyperbolic tangent activation function on the hidden nodes
-    for i = 1, #hs[1] do
+    for i = 1, #hs do
         hs[i][1] = math.tanh(hs[i][1])
     end
 
@@ -89,7 +89,7 @@ function enn.compute(enn, inputs)
     local os = matrix.mul(enn.l2, hs)
 
     -- Apply the hyperbolic tangent activation function on the output nodes
-    for i = 1, #os[1] do
+    for i = 1, #os do
         os[i][1] = math.tanh(os[i][1])
     end
 
@@ -105,32 +105,32 @@ function enn.change(enn, p, perf)
     mult = math.exp(-5 * perf)
     dev = 1.0
 
-    -- for i = 1, #enn.l1 do
-    --     for j = 1, #enn.l1[1] do
-    --         if math.random() <= p then
-    --             enn.l1[i][j] = enn.l1[i][j] + mult * rand(-dev, dev)
-    --             enn.l1[i][j] = math.max(-1, enn.l1[i][j])
-    --             enn.l1[i][j] = math.min( 1, enn.l1[i][j])
-    --         end
-    --     end
-    -- end
+    for i = 1, #enn.l1 do
+        for j = 1, #enn.l1[1] do
+            if math.random() <= p then
+                enn.l1[i][j] = enn.l1[i][j] + mult * rand(-dev, dev)
+                enn.l1[i][j] = math.max(-2, enn.l1[i][j])
+                enn.l1[i][j] = math.min( 2, enn.l1[i][j])
+            end
+        end
+    end
 
-    -- for i = 1, #enn.lc do
-    --     for j = 1, #enn.lc[1] do
-    --         if math.random() <= p then
-    --             enn.lc[i][j] = enn.lc[i][j] + mult * rand(-dev, dev)
-    --             enn.lc[i][j] = math.max(-1, enn.lc[i][j])
-    --             enn.lc[i][j] = math.min( 1, enn.lc[i][j])
-    --         end
-    --     end
-    -- end
+    for i = 1, #enn.lc do
+        for j = 1, #enn.lc[1] do
+            if math.random() <= p then
+                enn.lc[i][j] = enn.lc[i][j] + mult * rand(-dev, dev)
+                enn.lc[i][j] = math.max(-2, enn.lc[i][j])
+                enn.lc[i][j] = math.min( 2, enn.lc[i][j])
+            end
+        end
+    end
 
     for i = 1, #enn.l2 do
         for j = 1, #enn.l2[1] do
             if math.random() <= p then
                 enn.l2[i][j] = enn.l2[i][j] + mult * rand(-dev, dev)
-                enn.l2[i][j] = math.max(-1, enn.l2[i][j])
-                enn.l2[i][j] = math.min( 1, enn.l2[i][j])
+                enn.l2[i][j] = math.max(-2, enn.l2[i][j])
+                enn.l2[i][j] = math.min( 2, enn.l2[i][j])
             end
         end
     end
