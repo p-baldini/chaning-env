@@ -11,7 +11,7 @@ local evaluator = require "eval"
 
 -- Seed of the experiment for reproducibility
 SEED = ££ SEED ££
-MUTATION_PROBABILITY = 0.1
+MUTATION_PROBABILITY = 0.2
 
 -- Maximum motor speed
 MAXIMUM_SPEED = 10
