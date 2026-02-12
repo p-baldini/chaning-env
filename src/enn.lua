@@ -75,7 +75,10 @@ function enn.compute(enn, inputs)
         matrix.hadamard(enn.lc, enn.cs)
     )
 
-    -- Apply the identity activation function on the hidden nodes
+    -- Apply the hyperbolic tangent activation function on the hidden nodes
+    for i = 1, #hs[1] do
+        hs[i][1] = math.tanh(hs[i][1])
+    end
 
     -- Copy the value of the hidden nodes to the context
     enn.cs = matrix.copy(hs)
@@ -85,9 +88,9 @@ function enn.compute(enn, inputs)
     hs[#hs + 1] = { 1 }
     local os = matrix.mul(enn.l2, hs)
 
-    -- Apply the activation function on the hidden nodes
+    -- Apply the hyperbolic tangent activation function on the output nodes
     for i = 1, #os[1] do
-        os[i][1] = sigmoid(os[i][1])
+        os[i][1] = math.tanh(os[i][1])
     end
 
     return enn, { os[1][1], os[2][1] }
